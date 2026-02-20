@@ -141,17 +141,17 @@ export default function FeaturesPageClient() {
               Everything you need to automate and scale your WhatsApp communication. 
               From bulk messaging to AI-powered chatbots, we've got you covered.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="/register">
-                <Button className="btn-primary gap-2">
-                  Start Free Trial
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </a>
-              <a href="/pricing">
-                <Button className="btn-secondary">View Pricing</Button>
-              </a>
-            </div>
+             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+               <a href="https://app.whatspilot.online">
+                 <Button className="btn-primary gap-2">
+                   Start Free Trial
+                   <ArrowRight className="w-4 h-4" />
+                 </Button>
+               </a>
+               <a href="/pricing">
+                 <Button className="btn-secondary">View Pricing</Button>
+               </a>
+             </div>
           </div>
         </div>
       </section>
@@ -272,12 +272,12 @@ export default function FeaturesPageClient() {
               <p className="text-white/80 mb-8 max-w-xl mx-auto">
                 Start your 5-day free trial today. No credit card required.
               </p>
-              <a href="/register">
-                <Button className="bg-white text-whatsapp-green hover:bg-gray-100 gap-2">
-                  Start Free Trial
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </a>
+               <a href="https://app.whatspilot.online">
+                 <Button className="bg-white text-whatsapp-green hover:bg-gray-100 gap-2">
+                   Start Free Trial
+                   <ArrowRight className="w-4 h-4" />
+                 </Button>
+               </a>
             </div>
           </div>
         </div>

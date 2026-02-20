@@ -131,22 +131,22 @@ export default function Hero() {
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up animation-delay-500">
-                <Link href="/register">
-                  <Button size="lg" className="btn-primary gap-2 w-full sm:w-auto">
-                    Start Free Trial
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </Link>
-                <a 
-                  href="https://cal.com/whatspilot/demo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button size="lg" variant="outline" className="btn-secondary gap-2 w-full sm:w-auto">
-                    <Play className="w-4 h-4" />
-                    Book Demo
-                  </Button>
-                </a>
+                 <a href="https://app.whatspilot.online">
+                   <Button size="lg" className="btn-primary gap-2 w-full sm:w-auto">
+                     Start Free Trial
+                     <ArrowRight className="w-4 h-4" />
+                   </Button>
+                 </a>
+                 <a
+                   href="https://calendly.com/dummy"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                 >
+                   <Button size="lg" variant="outline" className="btn-secondary gap-2 w-full sm:w-auto">
+                     <Play className="w-4 h-4" />
+                     Book Demo
+                   </Button>
+                 </a>
               </div>
 
               {/* Features List */}

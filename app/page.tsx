@@ -3,7 +3,7 @@ import Hero from "./sections/Hero";
 import Integrations from "./sections/Integrations";
 import Features from "./sections/Features";
 import Pricing from "./sections/Pricing";
-import Testimonials from "./sections/Testimonials";
+
 import FAQ from "./sections/FAQ";
 import Blog from "./sections/Blog";
 import CTA from "./sections/CTA";
@@ -38,7 +38,6 @@ export default function HomePage() {
       <Integrations />
       <Features />
       <Pricing />
-      <Testimonials />
       <FAQ />
       <Blog />
       <CTA />

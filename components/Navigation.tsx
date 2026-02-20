@@ -6,12 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import Logo from './Logo';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+
 
 interface NavigationProps {
   scrollY: number;
@@ -21,15 +16,10 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Features', href: '/features' },
   { name: 'Pricing', href: '/pricing' },
-  { name: 'About', href: '/about' },
   { name: 'Blog', href: '/blog' },
 ];
 
-const legalLinks = [
-  { name: 'Privacy Policy', href: '/privacy' },
-  { name: 'Terms of Service', href: '/terms' },
-  { name: 'Refund Policy', href: '/refund' },
-];
+
 
 export default function Navigation({ scrollY }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,7 +52,7 @@ export default function Navigation({ scrollY }: NavigationProps) {
       >
         <div className="gradient-bg-animated text-white text-center py-2.5 px-4 text-sm font-medium">
           <span>Now Hiring: Are You A Driven And Motivated Developer? </span>
-          <Link href="/contact" className="underline hover:no-underline ml-1">
+          <Link href="/careers" className="underline hover:no-underline ml-1">
             Join our Team
           </Link>
         </div>
@@ -110,24 +100,7 @@ export default function Navigation({ scrollY }: NavigationProps) {
                   </Link>
                 ))}
                 
-                {/* Legal Dropdown */}
-                <DropdownMenu>
-                  <DropdownMenuTrigger className={`flex items-center gap-1 text-sm font-medium transition-colors duration-300 hover:text-whatsapp-green ${
-                    isScrolled ? 'text-gray-700' : 'text-gray-700'
-                  }`}>
-                    Legal
-                    <ChevronDown className="w-4 h-4" />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-48">
-                    {legalLinks.map((link) => (
-                      <DropdownMenuItem key={link.name} asChild>
-                        <Link href={link.href} className="cursor-pointer">
-                          {link.name}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
+
               </div>
 
               {/* CTA Buttons */}
@@ -140,8 +113,8 @@ export default function Navigation({ scrollY }: NavigationProps) {
                 >
                   Login
                 </Link>
-                <a 
-                  href="https://cal.com/whatspilot/demo"
+                <a
+                  href="https://calendly.com/dummy"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -198,19 +171,19 @@ export default function Navigation({ scrollY }: NavigationProps) {
               >
                 Login
               </Link>
-              <a 
-                href="https://cal.com/whatspilot/demo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <Button className="w-full btn-primary">
-                  <svg width="16" height="16" viewBox="0 0 32 32" fill="none" className="transform -rotate-12 mr-2">
-                    <path d="M3 16L28 4L19 28L15 18L3 16Z" fill="white" stroke="white" strokeWidth="1.5" strokeLinejoin="round"/>
-                  </svg>
-                  Book Demo
-                </Button>
-              </a>
+               <a
+                 href="https://calendly.com/dummy"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="block"
+               >
+                 <Button className="w-full btn-primary">
+                   <svg width="16" height="16" viewBox="0 0 32 32" fill="none" className="transform -rotate-12 mr-2">
+                     <path d="M3 16L28 4L19 28L15 18L3 16Z" fill="white" stroke="white" strokeWidth="1.5" strokeLinejoin="round"/>
+                   </svg>
+                   Book Demo
+                 </Button>
+               </a>
             </div>
           </div>
         </div>

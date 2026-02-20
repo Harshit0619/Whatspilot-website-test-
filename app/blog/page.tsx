@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BlogPageClient from "./BlogPageClient";
+import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog - WhatsPilot.io",
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
-  return <BlogPageClient />;
+export default async function BlogPage() {
+  const allPosts = getAllPosts();
+  const categories = ['All', ...new Set(allPosts.map(post => post.category))];
+
+  return <BlogPageClient 
+    initialPosts={allPosts} 
+    categories={categories} 
+  />;
 }
