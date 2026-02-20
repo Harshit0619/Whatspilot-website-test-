@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   return {
-    title: `${post.title} | WhatsPilot.io Blog`,
+    title: `${post.title} | WhatsPilot Blog`,
     description: post.excerpt,
     keywords: post.tags,
     openGraph: {

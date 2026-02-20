@@ -21,11 +21,11 @@ const footerLinks = {
     { name: "Integrations", href: "/features" },
     { name: "API", href: "/features" },
   ],
-    company: [
-      { name: 'Blog', href: '/blog' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Contact', href: '/contact' },
-    ],
+  company: [
+    { name: "Blog", href: "/blog" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
+  ],
   resources: [
     { name: "Documentation", href: "/features" },
     { name: "Help Center", href: "/faq" },
@@ -207,7 +207,7 @@ export default function Footer() {
                   className="flex items-center gap-2 hover:text-whatsapp-green transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  support@whatspilot.io
+                  support@whatspilot.online
                 </a>
                 <span className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
@@ -231,8 +231,7 @@ export default function Footer() {
           <div className="container-wide">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
               <p className="text-gray-400">
-                © {new Date().getFullYear()} WhatsPilot.io. All rights
-                reserved.
+                © {new Date().getFullYear()} WhatsPilot. All rights reserved.
               </p>
               <p className="text-gray-500">Made with ❤️ in India</p>
             </div>

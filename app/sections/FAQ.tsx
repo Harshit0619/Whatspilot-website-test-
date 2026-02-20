@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     question: 'Do I need a credit card to sign up?',
-    answer: 'No, you can start your free trial without a credit card. We believe in letting you experience the full power of WhatsPilot.io before making any commitment. Simply sign up with your email and start automating your WhatsApp communication.',
+    answer: 'No, you can start your free trial without a credit card. We believe in letting you experience the full power of WhatsPilot before making any commitment. Simply sign up with your email and start automating your WhatsApp communication.',
   },
   {
     question: 'Why does my business need a chatbot?',
@@ -23,11 +23,11 @@ const faqs = [
   },
   {
     question: 'Can I integrate with my existing CRM?',
-    answer: 'Yes, we offer integrations with popular CRMs like HubSpot, Salesforce, Zoho, and many more through Zapier, Make.com, and our REST API. You can sync contacts, track conversations, and automate workflows between WhatsPilot.io and your existing tools.',
+    answer: 'Yes, we offer integrations with popular CRMs like HubSpot, Salesforce, Zoho, and many more through Zapier, Make.com, and our REST API. You can sync contacts, track conversations, and automate workflows between WhatsPilot and your existing tools.',
   },
   {
-    question: 'Is WhatsPilot.io compliant with WhatsApp Business API?',
-    answer: 'Yes, WhatsPilot.io is fully compliant with WhatsApp Business API and WhatsApp Business Platform policies. We use official WhatsApp Business API for all communications, ensuring your messages are delivered reliably and your account remains in good standing.',
+    question: 'Is WhatsPilot compliant with WhatsApp Business API?',
+    answer: 'Yes, WhatsPilot is fully compliant with WhatsApp Business API and WhatsApp Business Platform policies. We use official WhatsApp Business API for all communications, ensuring your messages are delivered reliably and your account remains in good standing.',
   },
 ];
 
@@ -72,7 +72,7 @@ export default function FAQ() {
                 <span className="gradient-text">Questions</span>
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Everything you need to know about WhatsPilot.io. 
+                Everything you need to know about WhatsPilot. 
                 Can't find the answer you're looking for? 
                 Feel free to contact our support team.
               </p>

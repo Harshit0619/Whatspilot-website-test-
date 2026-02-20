@@ -97,7 +97,7 @@ export default function Hero() {
                 </h1>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight animate-slide-up animation-delay-200">
                   <span className="text-gray-400 text-2xl sm:text-3xl lg:text-4xl font-medium">with</span>{' '}
-                  <span className="gradient-text">WhatsPilot.io</span>
+                  <span className="gradient-text">WhatsPilot</span>
                 </h1>
               </div>
 
@@ -176,7 +176,7 @@ export default function Hero() {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200/50">
                   <img 
                     src="/hero-dashboard.jpg" 
-                    alt="WhatsPilot.io Dashboard"
+                    alt="WhatsPilot Dashboard"
                     className="w-full h-auto"
                   />
                 </div>
