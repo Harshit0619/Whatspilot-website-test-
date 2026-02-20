@@ -1,87 +1,86 @@
 "use client";
 
-
-import { useState, useRef, useEffect } from 'react';
-import { Check, Sparkles, Zap, Crown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Switch } from '@/components/ui/switch';
+import { useState, useRef, useEffect } from "react";
+import { Check, Sparkles, Zap, Crown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 
 const plans = [
   {
-    name: 'Starter',
+    name: "Starter",
     icon: Zap,
-    monthlyPrice: 1999,
-    yearlyPrice: 1666,
-    description: 'Perfect for small businesses getting started',
+    monthlyPrice: 1599,
+    yearlyPrice: 1499,
+    description: "Perfect for small businesses getting started",
     features: [
-      '30,000 messages/month',
-      '20,000 contacts',
-      '100 templates',
-      '1 WhatsApp connection',
-      '1 workflow',
-      'WhatsApp Chatbot',
-      'Bulk messaging',
-      'Schedule messages',
-      'Access WhatsApp Chats',
-      'Access WhatsApp Groups',
-      '1 App integration',
-      'API access',
+      "30,000 messages/month",
+      "20,000 contacts",
+      "100 templates",
+      "1 WhatsApp connection",
+      "1 workflow",
+      "WhatsApp Chatbot",
+      "Bulk messaging",
+      "Schedule messages",
+      "Access WhatsApp Chats",
+      "Access WhatsApp Groups",
+      "1 App integration",
+      "API access",
     ],
-    cta: 'Get Started',
+    cta: "Get Started",
     popular: false,
   },
   {
-    name: 'Professional',
+    name: "Professional",
     icon: Sparkles,
     monthlyPrice: 3999,
     yearlyPrice: 3333,
-    description: 'Best for growing businesses',
+    description: "Best for growing businesses",
     features: [
-      'Unlimited messages',
-      '40,000 contacts',
-      '300 templates',
-      '3 WhatsApp connections',
-      '5 workflows',
-      'WhatsApp Chatbot',
-      'Bulk messaging',
-      'Schedule messages',
-      'WA group schedule',
-      'WA group listener',
-      'Access WhatsApp Chats',
-      'Access WhatsApp Groups',
-      '3 App integrations',
-      'API access',
-      'Priority support',
+      "Unlimited messages",
+      "40,000 contacts",
+      "300 templates",
+      "3 WhatsApp connections",
+      "5 workflows",
+      "WhatsApp Chatbot",
+      "Bulk messaging",
+      "Schedule messages",
+      "WA group schedule",
+      "WA group listener",
+      "Access WhatsApp Chats",
+      "Access WhatsApp Groups",
+      "3 App integrations",
+      "API access",
+      "Priority support",
     ],
-    cta: 'Start Free Trial',
+    cta: "Start Free Trial",
     popular: true,
-    badge: 'Most Popular',
+    badge: "Most Popular",
   },
   {
-    name: 'Enterprise',
+    name: "Enterprise",
     icon: Crown,
-    monthlyPrice: 13299,
-    yearlyPrice: 11083,
-    description: 'For large-scale operations',
+    monthlyPrice: 9999,
+    yearlyPrice: 8999,
+    description: "For large-scale operations",
     features: [
-      'Unlimited messages',
-      '50,000 contacts',
-      '500 templates',
-      '5 WhatsApp connections',
-      '10 workflows',
-      'WhatsApp Chatbot',
-      'Bulk messaging',
-      'Schedule messages',
-      'WA group schedule',
-      'WA group listener',
-      'Access WhatsApp Chats',
-      'Access WhatsApp Groups',
-      '10 App integrations',
-      'API access',
-      'Dedicated support',
-      'Custom onboarding',
+      "Unlimited messages",
+      "50,000 contacts",
+      "500 templates",
+      "5 WhatsApp connections",
+      "10 workflows",
+      "WhatsApp Chatbot",
+      "Bulk messaging",
+      "Schedule messages",
+      "WA group schedule",
+      "WA group listener",
+      "Access WhatsApp Chats",
+      "Access WhatsApp Groups",
+      "10 App integrations",
+      "API access",
+      "Dedicated support",
+      "Custom onboarding",
     ],
-    cta: 'Contact Sales',
+    cta: "Contact Sales",
     popular: false,
   },
 ];
@@ -98,7 +97,7 @@ export default function Pricing() {
           setIsInView(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -109,7 +108,10 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-32 bg-gray-50/50 relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="py-20 lg:py-32 bg-gray-50/50 relative overflow-hidden"
+    >
       {/* Background Decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-whatsapp-green/5 blur-3xl" />
@@ -124,18 +126,19 @@ export default function Pricing() {
               Pricing
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Simple, Transparent{' '}
-              <span className="gradient-text">Pricing</span>
+              Simple, Transparent <span className="gradient-text">Pricing</span>
             </h2>
             <p className="text-lg text-gray-600">
-              Choose the plan that fits your business needs. 
-              All plans include a 5-day free trial.
+              Choose the plan that fits your business needs. All plans include a
+              5-day free trial.
             </p>
           </div>
 
           {/* Billing Toggle */}
           <div className="flex items-center justify-center gap-4 mb-12">
-            <span className={`text-sm font-medium ${!isYearly ? 'text-gray-900' : 'text-gray-500'}`}>
+            <span
+              className={`text-sm font-medium ${!isYearly ? "text-gray-900" : "text-gray-500"}`}
+            >
               Monthly
             </span>
             <Switch
@@ -143,7 +146,9 @@ export default function Pricing() {
               onCheckedChange={setIsYearly}
               className="data-[state=checked]:bg-whatsapp-green"
             />
-            <span className={`text-sm font-medium ${isYearly ? 'text-gray-900' : 'text-gray-500'}`}>
+            <span
+              className={`text-sm font-medium ${isYearly ? "text-gray-900" : "text-gray-500"}`}
+            >
               Yearly
             </span>
             {isYearly && (
@@ -160,12 +165,12 @@ export default function Pricing() {
                 key={plan.name}
                 className={`relative rounded-2xl transition-all duration-700 ${
                   isInView
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-12'
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-12"
                 } ${
                   plan.popular
-                    ? 'bg-white shadow-xl border-2 border-whatsapp-green scale-105 lg:scale-110 z-10'
-                    : 'bg-white shadow-card border border-gray-100 hover:shadow-card-hover'
+                    ? "bg-white shadow-xl border-2 border-whatsapp-green scale-105 lg:scale-110 z-10"
+                    : "bg-white shadow-card border border-gray-100 hover:shadow-card-hover"
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
@@ -181,53 +186,83 @@ export default function Pricing() {
                 <div className="p-6 lg:p-8">
                   {/* Plan Header */}
                   <div className="flex items-center gap-3 mb-4">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                      plan.popular ? 'gradient-bg' : 'bg-gray-100'
-                    }`}>
-                      <plan.icon className={`w-5 h-5 ${plan.popular ? 'text-white' : 'text-gray-600'}`} />
+                    <div
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                        plan.popular ? "gradient-bg" : "bg-gray-100"
+                      }`}
+                    >
+                      <plan.icon
+                        className={`w-5 h-5 ${plan.popular ? "text-white" : "text-gray-600"}`}
+                      />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
+                      <h3 className="text-xl font-bold text-gray-900">
+                        {plan.name}
+                      </h3>
                     </div>
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-6">{plan.description}</p>
+                  <p className="text-gray-600 text-sm mb-6">
+                    {plan.description}
+                  </p>
 
                   {/* Price */}
                   <div className="mb-6">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-2xl font-medium text-gray-500">₹</span>
+                      <span className="text-2xl font-medium text-gray-500">
+                        ₹
+                      </span>
                       <span className="text-4xl lg:text-5xl font-bold text-gray-900">
-                        {isYearly ? plan.yearlyPrice.toLocaleString() : plan.monthlyPrice.toLocaleString()}
+                        {isYearly
+                          ? plan.yearlyPrice.toLocaleString()
+                          : plan.monthlyPrice.toLocaleString()}
                       </span>
                       <span className="text-gray-500">/month</span>
                     </div>
                     {isYearly && (
                       <p className="text-sm text-gray-500 mt-1">
-                        Billed annually (₹{(plan.yearlyPrice * 12).toLocaleString()}/year)
+                        Billed annually (₹
+                        {(plan.yearlyPrice * 12).toLocaleString()}/year)
                       </p>
                     )}
                   </div>
 
                   {/* CTA Button */}
-                  <Button 
-                    className={`w-full mb-8 ${
-                      plan.popular 
-                        ? 'btn-primary' 
-                        : 'btn-secondary'
-                    }`}
-                  >
-                    {plan.cta}
-                  </Button>
+                  {plan.cta === "Start Free Trial" ||
+                  plan.cta === "Get Started" ? (
+                    <a href="https://app.whatspilot.online" className="block">
+                      <Button
+                        className={`w-full mb-8 ${
+                          plan.popular ? "btn-primary" : "btn-secondary"
+                        }`}
+                      >
+                        {plan.cta}
+                      </Button>
+                    </a>
+                  ) : (
+                    <Button
+                      className={`w-full mb-8 ${
+                        plan.popular ? "btn-primary" : "btn-secondary"
+                      }`}
+                    >
+                      {plan.cta}
+                    </Button>
+                  )}
 
                   {/* Features List */}
                   <div className="space-y-3">
-                    <p className="text-sm font-medium text-gray-900 mb-3">What's included:</p>
+                    <p className="text-sm font-medium text-gray-900 mb-3">
+                      What's included:
+                    </p>
                     {plan.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-3">
-                        <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                          plan.popular ? 'text-whatsapp-green' : 'text-gray-400'
-                        }`} />
+                        <Check
+                          className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
+                            plan.popular
+                              ? "text-whatsapp-green"
+                              : "text-gray-400"
+                          }`}
+                        />
                         <span className="text-sm text-gray-600">{feature}</span>
                       </div>
                     ))}
@@ -240,9 +275,11 @@ export default function Pricing() {
           {/* Bottom Note */}
           <div className="text-center mt-12">
             <p className="text-gray-600">
-              All plans include{' '}
-              <span className="font-medium text-gray-900">5-day free trial</span>
-              {' '}• No credit card required
+              All plans include{" "}
+              <span className="font-medium text-gray-900">
+                5-day free trial
+              </span>{" "}
+              • No credit card required
             </p>
           </div>
         </div>

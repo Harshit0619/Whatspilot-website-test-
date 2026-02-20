@@ -42,29 +42,29 @@ export default function CTA() {
 
             {/* Subheadline */}
             <p className="text-lg lg:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              Join 800+ businesses already using WhatsPilot.io to automate and scale 
+              Join 800+ businesses already using WhatsPilot to automate and scale 
               their customer communication. No credit card required.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/register">
-                <Button 
-                  size="lg" 
+              <a href="https://app.whatspilot.online">
+                <Button
+                  size="lg"
                   className="bg-white text-whatsapp-green hover:bg-gray-100 gap-2 px-8 py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                 >
                   <MessageCircle className="w-5 h-5" />
                   Start Free Trial
                   <ArrowRight className="w-5 h-5" />
                 </Button>
-              </Link>
-              <a 
-                href="https://cal.com/whatspilot/demo"
+              </a>
+              <a
+                href="https://calendly.com/dummy"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   variant="outline"
                   className="border-2 border-white text-white hover:bg-white/10 gap-2 px-8 py-6 text-lg font-semibold"
                 >

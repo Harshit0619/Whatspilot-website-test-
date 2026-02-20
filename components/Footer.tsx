@@ -1,43 +1,62 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { Twitter, Instagram, Facebook, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import Logo from './Logo';
+import Link from "next/link";
+import {
+  Twitter,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import Logo from "./Logo";
 
 const footerLinks = {
   product: [
-    { name: 'Features', href: '/features' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Integrations', href: '/features' },
-    { name: 'API', href: '/features' },
+    { name: "Features", href: "/features" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Integrations", href: "/features" },
+    { name: "API", href: "/features" },
   ],
   company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Careers', href: '/contact' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Blog", href: "/blog" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
   ],
   resources: [
-    { name: 'Documentation', href: '/features' },
-    { name: 'Help Center', href: '/faq' },
-    { name: 'Community', href: '/blog' },
-    { name: 'Templates', href: '/features' },
+    { name: "Documentation", href: "/features" },
+    { name: "Help Center", href: "/faq" },
+    { name: "Community", href: "/blog" },
+    { name: "Templates", href: "/features" },
   ],
   legal: [
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/privacy' },
-    { name: 'Refund Policy', href: '/refund' },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Cookie Policy", href: "/privacy" },
+    { name: "Refund Policy", href: "/refund" },
   ],
 };
 
 const socialLinks = [
-  { name: 'Twitter', icon: Twitter, href: 'https://x.com/whatspilot' },
-  { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/whatspilot/' },
-  { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/whatspilot' },
-  { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/company/whatspilot/' },
+  { name: "Twitter", icon: Twitter, href: "https://x.com/whatspilot" },
+  {
+    name: "Instagram",
+    icon: Instagram,
+    href: "https://www.instagram.com/whatspilot/",
+  },
+  {
+    name: "Facebook",
+    icon: Facebook,
+    href: "https://www.facebook.com/whatspilot",
+  },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    href: "https://www.linkedin.com/company/whatspilot/",
+  },
 ];
 
 export default function Footer() {
@@ -52,18 +71,20 @@ export default function Footer() {
               <Link href="/">
                 <Logo />
               </Link>
-              
+
               <p className="text-gray-600 text-sm leading-relaxed max-w-sm">
-                Transform your WhatsApp into a powerful business automation platform. 
-                Connect, engage, and scale with ease.
+                Transform your WhatsApp into a powerful business automation
+                platform. Connect, engage, and scale with ease.
               </p>
 
               {/* Newsletter */}
               <div className="space-y-3">
-                <h4 className="font-semibold text-gray-900">Subscribe to our newsletter</h4>
+                <h4 className="font-semibold text-gray-900">
+                  Subscribe to our newsletter
+                </h4>
                 <div className="flex gap-2">
-                  <Input 
-                    type="email" 
+                  <Input
+                    type="email"
                     placeholder="Enter your email"
                     className="flex-1 bg-white border-gray-200"
                   />
@@ -129,7 +150,9 @@ export default function Footer() {
 
                 {/* Resources */}
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-4">Resources</h4>
+                  <h4 className="font-semibold text-gray-900 mb-4">
+                    Resources
+                  </h4>
                   <ul className="space-y-3">
                     {footerLinks.resources.map((link) => (
                       <li key={link.name}>
@@ -172,13 +195,19 @@ export default function Footer() {
           <div className="container-wide">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
-                <a href="tel:+919289450550" className="flex items-center gap-2 hover:text-whatsapp-green transition-colors">
+                <a
+                  href="tel:+918130367983"
+                  className="flex items-center gap-2 hover:text-whatsapp-green transition-colors"
+                >
                   <Phone className="w-4 h-4" />
-                  +91 92894 50550
+                  +91 81303 67983
                 </a>
-                <a href="mailto:support@whatspilot.io" className="flex items-center gap-2 hover:text-whatsapp-green transition-colors">
+                <a
+                  href="mailto:support@whatspilot.online"
+                  className="flex items-center gap-2 hover:text-whatsapp-green transition-colors"
+                >
                   <Mail className="w-4 h-4" />
-                  support@whatspilot.io
+                  support@whatspilot.online
                 </a>
                 <span className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
@@ -186,7 +215,10 @@ export default function Footer() {
                 </span>
               </div>
               <p className="text-sm text-gray-500">
-                Help Desk: <span className="text-whatsapp-green font-medium">+91 92894 50550</span>
+                Help Desk:{" "}
+                <span className="text-whatsapp-green font-medium">
+                  +91 81303 67983
+                </span>
               </p>
             </div>
           </div>
@@ -199,11 +231,9 @@ export default function Footer() {
           <div className="container-wide">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
               <p className="text-gray-400">
-                © {new Date().getFullYear()} WhatsPilot.io. All rights reserved.
+                © {new Date().getFullYear()} WhatsPilot. All rights reserved.
               </p>
-              <p className="text-gray-500">
-                Made with ❤️ in India
-              </p>
+              <p className="text-gray-500">Made with ❤️ in India</p>
             </div>
           </div>
         </div>

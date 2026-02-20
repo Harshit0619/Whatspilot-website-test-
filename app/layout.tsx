@@ -4,12 +4,21 @@ import NavigationWrapper from "@/components/NavigationWrapper";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "WhatsPilot.io - WhatsApp Business Automation Platform",
-  description: "Transform your WhatsApp into a powerful business automation platform. Connect, engage, and scale with ease using WhatsPilot.io's intelligent automation tools.",
-  keywords: ["whatsapp", "automation", "business", "messaging", "marketing", "crm"],
+  title: "WhatsPilot - WhatsApp Business Automation Platform",
+  description:
+    "Transform your WhatsApp into a powerful business automation platform. Connect, engage, and scale with ease using WhatsPilot's intelligent automation tools.",
+  keywords: [
+    "whatsapp",
+    "automation",
+    "business",
+    "messaging",
+    "marketing",
+    "crm",
+  ],
   openGraph: {
-    title: "WhatsPilot.io - WhatsApp Business Automation Platform",
-    description: "Transform your WhatsApp into a powerful business automation platform",
+    title: "WhatsPilot - WhatsApp Business Automation Platform",
+    description:
+      "Transform your WhatsApp into a powerful business automation platform",
     type: "website",
   },
 };

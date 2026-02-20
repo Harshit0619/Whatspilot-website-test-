@@ -1,94 +1,39 @@
 "use client";
 
-
 import { useState } from 'react';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Search, Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
-const blogPosts = [
-  {
-    id: 1,
-    slug: 'whatsapp-shared-inbox-task-management',
-    title: 'How WhatsApp Shared Inbox + Task Management Improves Indian Support Operations',
-    excerpt: 'Learn how WhatsApp Shared Inbox and task management transform Indian support operations. Discover how WhatsApp Automation helps teams collaborate efficiently and handle customer queries faster.',
-    image: '/blog-1.jpg',
-    category: 'WhatsApp Automation',
-    tags: ['support', 'whatsapp'],
-    author: 'WhatsPilot Team',
-    date: 'Feb 9, 2026',
-    readTime: '5 min read',
-  },
-  {
-    id: 2,
-    slug: 'whatsapp-crm-vs-email-engagement',
-    title: 'Why WhatsApp CRM Is Better Than Email for Indian Customer Engagement',
-    excerpt: 'Discover why WhatsApp CRM outperforms email for Indian customer engagement. Learn how WhatsApp Automation and the best WhatsApp CRM tools drive better results for businesses.',
-    image: '/blog-2.jpg',
-    category: 'App Integrations',
-    tags: ['whatsapp', 'crm'],
-    author: 'WhatsPilot Team',
-    date: 'Feb 9, 2026',
-    readTime: '4 min read',
-  },
-  {
-    id: 3,
-    slug: 'automatic-assignment-whatsapp-conversations',
-    title: 'Automatic Assignment of WhatsApp Conversations to Multiple Agents',
-    excerpt: 'Learn how automatic assignment of WhatsApp conversations to multiple agents improves response time, team efficiency, and customer satisfaction with WhatsApp Automation.',
-    image: '/blog-3.jpg',
-    category: 'Support',
-    tags: ['marketing', 'whatsapp'],
-    author: 'WhatsPilot Team',
-    date: 'Feb 9, 2026',
-    readTime: '6 min read',
-  },
-  {
-    id: 4,
-    slug: 'slack-whatsapp-integration-workflows',
-    title: 'Slack + WhatsApp Integration Workflows That Indian Teams Must Try',
-    excerpt: 'Discover must-try Slack + WhatsApp integration workflows for Indian teams. Learn how WhatsApp Automation can streamline communication and boost productivity.',
-    image: '/blog-4.jpg',
-    category: 'App Integrations',
-    tags: ['whatsapp', 'automation'],
-    author: 'WhatsPilot Team',
-    date: 'Feb 8, 2026',
-    readTime: '5 min read',
-  },
-  {
-    id: 5,
-    slug: 'whatsapp-crm-integration-guide',
-    title: 'The Ultimate Guide to Integrating WhatsApp With Your CRM for Indian Businesses',
-    excerpt: 'Learn how Indian businesses can integrate WhatsApp with their CRM using WhatsApp Automation and the best WhatsApp CRM tools for better customer management.',
-    image: '/blog-5.jpg',
-    category: 'Support',
-    tags: ['support', 'chatbot'],
-    author: 'WhatsPilot Team',
-    date: 'Feb 8, 2026',
-    readTime: '7 min read',
-  },
-  {
-    id: 6,
-    slug: 'whatsapp-bots-for-faqs',
-    title: 'How Indian Service Businesses Use WhatsApp Bots to Handle FAQs Automatically',
-    excerpt: 'Learn how Indian service businesses use WhatsApp Automation and WhatsApp Bots to handle FAQs automatically, improve response time, and enhance customer satisfaction.',
-    image: '/blog-6.jpg',
-    category: 'Support',
-    tags: ['support', 'chatbot'],
-    author: 'WhatsPilot Team',
-    date: 'Feb 8, 2026',
-    readTime: '5 min read',
-  },
-];
+interface BlogPost {
+  id?: number;
+  slug: string;
+  title: string;
+  excerpt: string;
+  image: string;
+  category: string;
+  tags: string[];
+  author: string;
+  date: string;
+  readTime: string;
+}
 
-const categories = ['All', 'WhatsApp Automation', 'App Integrations', 'Support', 'Marketing'];
+interface BlogPageClientProps {
+  initialPosts: BlogPost[];
+  categories: string[];
+}
 
-export default function BlogPage() {
+export default function BlogPageClient({ 
+  initialPosts, 
+  categories 
+}: BlogPageClientProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const filteredPosts = blogPosts.filter((post) => {
+  const filteredPosts = initialPosts.filter((post) => {
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
@@ -144,7 +89,7 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {filteredPosts.map((post, index) => (
               <article
-                key={post.id}
+                key={post.slug}
                 className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-1"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
