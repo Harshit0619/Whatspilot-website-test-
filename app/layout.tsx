@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "marketing",
     "crm",
   ],
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "WhatsPilot - WhatsApp Business Automation Platform",
     description:
