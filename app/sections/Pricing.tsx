@@ -128,10 +128,10 @@ export default function Pricing() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Simple, Transparent <span className="gradient-text">Pricing</span>
             </h2>
-             <p className="text-lg text-gray-600">
-               Choose the plan that fits your business needs. All plans include a
-               5-day free trial to send whatsapp promotional messages at scale.
-             </p>
+            <p className="text-lg text-gray-600">
+              Choose the plan that fits your business needs. All plans include a
+              5-day free trial to send whatsapp promotional messages at scale.
+            </p>
           </div>
 
           {/* Billing Toggle */}
@@ -230,11 +230,17 @@ export default function Pricing() {
                   {/* CTA Button */}
                   {plan.cta === "Start Free Trial" ||
                   plan.cta === "Get Started" ? (
-                     <a href="https://app.whatspilot.online" title="Get started with the WhatsApp marketing software" className="block">
+                    <a
+                      href="https://app.whatspilot.online"
+                      title="Get started with the WhatsApp marketing software"
+                      aria-label={plan.cta}
+                      className="block"
+                    >
                       <Button
                         className={`w-full mb-8 ${
                           plan.popular ? "btn-primary" : "btn-secondary"
                         }`}
+                        aria-label={plan.cta}
                       >
                         {plan.cta}
                       </Button>
@@ -244,6 +250,7 @@ export default function Pricing() {
                       className={`w-full mb-8 ${
                         plan.popular ? "btn-primary" : "btn-secondary"
                       }`}
+                      aria-label={plan.cta}
                     >
                       {plan.cta}
                     </Button>
