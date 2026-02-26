@@ -83,6 +83,7 @@ export default function Blog() {
             <Link 
               href="/blog"
               title="View all articles about WhatsApp promotional messages and marketing"
+              aria-label="View All Articles"
               className="inline-flex items-center gap-2 text-whatsapp-green font-medium hover:underline"
             >
               View All Articles
@@ -98,7 +99,7 @@ export default function Blog() {
                 isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
             >
-               <Link href={`/blog/${blogPosts[0].slug}`} title={blogPosts[0].title}>
+               <Link href={`/blog/${blogPosts[0].slug}`} title={blogPosts[0].title} aria-label={blogPosts[0].title}>
                 <div className="relative h-full min-h-[400px] lg:min-h-full">
                   <img 
                     src={blogPosts[0].image}
@@ -141,7 +142,7 @@ export default function Blog() {
                 }`}
                 style={{ transitionDelay: `${(index + 1) * 150}ms` }}
               >
-                 <Link href={`/blog/${post.slug}`} title={post.title}>
+                 <Link href={`/blog/${post.slug}`} title={post.title} aria-label={post.title}>
                   <div className="relative h-48 overflow-hidden">
                     <img 
                       src={post.image}

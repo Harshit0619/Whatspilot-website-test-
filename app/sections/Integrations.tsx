@@ -174,11 +174,12 @@ export default function Integrations() {
 
           {/* CTA */}
           <div className="text-center mt-12">
-             <a 
-               href="/features"
-               title="View all 50+ integrations for WhatsApp marketing automation"
-               className="inline-flex items-center gap-2 text-whatsapp-green font-medium hover:underline"
-             >
+            <a
+              href="/features"
+              title="View all 50+ integrations for WhatsApp marketing automation"
+              aria-label="View All 50+ Integrations"
+              className="inline-flex items-center gap-2 text-whatsapp-green font-medium hover:underline"
+            >
               View All 50+ Integrations
               <span className="text-lg">→</span>
             </a>
