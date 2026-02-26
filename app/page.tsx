@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     "marketing",
     "crm",
     "customer support",
+    "whatsapp promotional messages",
+    "whatsapp marketing tools",
+    "whatsapp marketing software",
+    "whatsapp marketing platform",
+    "whatsapp campaign tools",
   ],
   openGraph: {
     title: "WhatsPilot - WhatsApp Business Automation Platform",

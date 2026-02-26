@@ -1,113 +1,10 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import {
-  MessageSquare,
-  CalendarClock,
-  Users,
-  Bot,
-  LayoutTemplate,
-  BarChart3,
-  Zap,
-  Shield,
-  Workflow,
-  Globe,
-  ArrowRight,
-  CheckCircle2,
-} from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2, Zap, Shield, Workflow, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const mainFeatures = [
-  {
-    icon: MessageSquare,
-    title: "Bulk Messaging",
-    description:
-      "Send personalized messages to thousands of contacts with one click. Our advanced bulk messaging system supports variables, scheduling, and delivery tracking.",
-    benefits: [
-      "Personalized messages with variables",
-      "Schedule campaigns in advance",
-      "Real-time delivery tracking",
-      "Import contacts from CSV/Excel",
-    ],
-    color: "#25d366",
-  },
-  {
-    icon: CalendarClock,
-    title: "Message Scheduling",
-    description:
-      "Plan and automate message delivery at the perfect time. Set up recurring messages and never miss an opportunity to engage with your audience.",
-    benefits: [
-      "Schedule one-time or recurring messages",
-      "Timezone-aware delivery",
-      "Campaign calendar view",
-      "Auto-resend failed messages",
-    ],
-    color: "#128c7e",
-  },
-  {
-    icon: Users,
-    title: "WhatsApp Group Management",
-    description:
-      "Manage group communications and broadcasts efficiently. Extract members, send targeted messages, and automate group interactions.",
-    benefits: [
-      "Group member extraction",
-      "Bulk group messaging",
-      "Auto-reply in groups",
-      "Group analytics",
-    ],
-    color: "#075e54",
-  },
-  {
-    icon: Bot,
-    title: "AI-Powered Chatbot",
-    description:
-      "Intelligent responses that engage customers 24/7. Set up auto-replies, handle FAQs, and qualify leads automatically.",
-    benefits: [
-      "Keyword-based auto-replies",
-      "AI-powered responses",
-      "Lead qualification",
-      "Multi-language support",
-    ],
-    color: "#25d366",
-  },
-  {
-    icon: LayoutTemplate,
-    title: "Template Library",
-    description:
-      "Pre-designed message templates for every scenario. Create, save, and reuse your best-performing messages.",
-    benefits: [
-      "100+ ready-to-use templates",
-      "Custom template creation",
-      "Template categories",
-      "A/B testing support",
-    ],
-    color: "#128c7e",
-  },
-  {
-    icon: BarChart3,
-    title: "Advanced Analytics",
-    description:
-      "Track delivery, opens, and engagement in real-time. Get insights to optimize your messaging strategy.",
-    benefits: [
-      "Real-time delivery stats",
-      "Engagement metrics",
-      "Campaign performance",
-      "Exportable reports",
-    ],
-    color: "#075e54",
-  },
-];
-
-const integrations = [
-  { name: "Zapier", description: "Connect with 5000+ apps" },
-  { name: "Shopify", description: "E-commerce automation" },
-  { name: "WordPress", description: "Website integration" },
-  { name: "Google Sheets", description: "Data synchronization" },
-  { name: "Slack", description: "Team notifications" },
-  { name: "HubSpot", description: "CRM integration" },
-  { name: "WooCommerce", description: "Store automation" },
-  { name: "Pabbly", description: "Workflow automation" },
-];
+import { featuresData, iconMap } from "./feature-data";
 
 export default function FeaturesPageClient() {
   const [isInView, setIsInView] = useState(false);
@@ -120,7 +17,7 @@ export default function FeaturesPageClient() {
           setIsInView(true);
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -167,46 +64,44 @@ export default function FeaturesPageClient() {
       <section ref={sectionRef} className="section-padding mb-20">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-            {mainFeatures.map((feature, index) => (
-              <div
-                key={feature.title}
-                className={`group p-6 lg:p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-whatsapp-green/30 hover:shadow-lg transition-all duration-500 ${
-                  isInView
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-12"
-                }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div className="flex items-start gap-4">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
-                    style={{ backgroundColor: `${feature.color}15` }}
-                  >
-                    <feature.icon
-                      className="w-6 h-6"
-                      style={{ color: feature.color }}
-                    />
+            {featuresData.map((feature, index) => {
+              const FeatureIcon = iconMap[feature.icon];
+              return (
+                <Link
+                  key={feature.id}
+                  href={`/features/${feature.slug}`}
+                  title={`Learn more about ${feature.title}`}
+                  className={`group p-6 lg:p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-whatsapp-green/30 hover:shadow-lg transition-all duration-500 ${
+                    isInView
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-12"
+                  }`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                      style={{ backgroundColor: `${feature.color}15` }}
+                    >
+                      <FeatureIcon
+                        className="w-6 h-6"
+                        style={{ color: feature.color }}
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-whatsapp-green transition-colors">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4">{feature.description}</p>
+                      <div className="inline-flex items-center gap-2 text-sm font-medium text-whatsapp-green">
+                        Learn more
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-whatsapp-green transition-colors">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{feature.description}</p>
-                    <ul className="space-y-2">
-                      {feature.benefits.map((benefit) => (
-                        <li
-                          key={benefit}
-                          className="flex items-center gap-2 text-sm text-gray-600"
-                        >
-                          <CheckCircle2 className="w-4 h-4 text-whatsapp-green flex-shrink-0" />
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -228,7 +123,16 @@ export default function FeaturesPageClient() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
-            {integrations.map((integration, index) => (
+            {[
+              { name: "Zapier", description: "Connect with 5000+ apps" },
+              { name: "Shopify", description: "E-commerce automation" },
+              { name: "WordPress", description: "Website integration" },
+              { name: "Google Sheets", description: "Data synchronization" },
+              { name: "Slack", description: "Team notifications" },
+              { name: "HubSpot", description: "CRM integration" },
+              { name: "WooCommerce", description: "Store automation" },
+              { name: "Pabbly", description: "Workflow automation" },
+            ].map((integration, index) => (
               <div
                 key={integration.name}
                 className="p-4 lg:p-6 rounded-xl bg-white border border-gray-100 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 text-center"

@@ -88,10 +88,11 @@ export default function FAQ() {
                     <p className="text-sm text-gray-600">We're here to help!</p>
                   </div>
                 </div>
-                <a 
-                  href="/contact"
-                  className="block w-full py-3 px-4 text-center rounded-xl border border-gray-200 text-gray-700 font-medium hover:border-whatsapp-green hover:text-whatsapp-green transition-colors"
-                >
+                 <a 
+                   href="/contact"
+                   title="Contact support for WhatsApp marketing platform assistance"
+                   className="block w-full py-3 px-4 text-center rounded-xl border border-gray-200 text-gray-700 font-medium hover:border-whatsapp-green hover:text-whatsapp-green transition-colors"
+                 >
                   Contact Support
                 </a>
               </div>
