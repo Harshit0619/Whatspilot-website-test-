@@ -101,11 +101,12 @@ export default function Hero() {
                 </h1>
               </div>
 
-              {/* Subheadline */}
-              <p className="text-lg sm:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 animate-slide-up animation-delay-300">
-                Connect any WhatsApp Number. No Code Required. Automate your 
-                business communication and scale effortlessly.
-              </p>
+               {/* Subheadline */}
+               <p className="text-lg sm:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 animate-slide-up animation-delay-300">
+                 Connect any WhatsApp Number. No Code Required. Automate your
+                 business communication with our comprehensive whatsapp marketing platform
+                 and scale effortlessly.
+               </p>
 
               {/* Trust Badge */}
               <div className="flex items-center justify-center lg:justify-start gap-4 animate-slide-up animation-delay-400">
@@ -131,14 +132,14 @@ export default function Hero() {
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up animation-delay-500">
-                 <a href="https://app.whatspilot.online">
+                  <a href="https://app.whatspilot.online" title="Start your free trial of the WhatsApp marketing platform">
                    <Button size="lg" className="btn-primary gap-2 w-full sm:w-auto">
                      Start Free Trial
                      <ArrowRight className="w-4 h-4" />
                    </Button>
                  </a>
                  <a
-                   href="https://calendly.com/dummy"
+                    href="https://calendly.com/dummy" title="Book a demo to learn about WhatsApp marketing tools"
                    target="_blank"
                    rel="noopener noreferrer"
                  >

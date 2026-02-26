@@ -40,15 +40,15 @@ export default function CTA() {
               <span className="text-whatsapp-light">WhatsApp Marketing?</span>
             </h2>
 
-            {/* Subheadline */}
-            <p className="text-lg lg:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              Join 800+ businesses already using WhatsPilot to automate and scale 
-              their customer communication. No credit card required.
-            </p>
+             {/* Subheadline */}
+             <p className="text-lg lg:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+               Join 800+ businesses already using WhatsPilot, a leading whatsapp marketing tools,
+               to automate and scale their customer communication. No credit card required.
+             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="https://app.whatspilot.online">
+              <a href="https://app.whatspilot.online" title="Start your free trial of the WhatsApp marketing platform">
                 <Button
                   size="lg"
                   className="bg-white text-whatsapp-green hover:bg-gray-100 gap-2 px-8 py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
@@ -58,11 +58,12 @@ export default function CTA() {
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </a>
-              <a
-                href="https://calendly.com/dummy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+             <a
+               href="https://calendly.com/dummy"
+               title="Book a demo to explore WhatsApp marketing tools"
+               target="_blank"
+               rel="noopener noreferrer"
+             >
                 <Button
                   size="lg"
                   variant="outline"

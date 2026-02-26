@@ -77,10 +77,11 @@ export default function Integrations() {
               Integrates WhatsApp with{' '}
               <span className="gradient-text">Top Tools</span>
             </h2>
-            <p className="text-lg text-gray-600">
-              Connect your favorite apps and automate workflows seamlessly. 
-              No coding required.
-            </p>
+             <p className="text-lg text-gray-600">
+               Connect your favorite apps and automate workflows seamlessly.
+               Access powerful whatsapp campaign tools from your favorite platforms.
+               No coding required.
+             </p>
           </div>
 
           {/* Orbit Animation Container */}
@@ -173,10 +174,11 @@ export default function Integrations() {
 
           {/* CTA */}
           <div className="text-center mt-12">
-            <a 
-              href="/features"
-              className="inline-flex items-center gap-2 text-whatsapp-green font-medium hover:underline"
-            >
+             <a 
+               href="/features"
+               title="View all 50+ integrations for WhatsApp marketing automation"
+               className="inline-flex items-center gap-2 text-whatsapp-green font-medium hover:underline"
+             >
               View All 50+ Integrations
               <span className="text-lg">→</span>
             </a>
