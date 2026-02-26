@@ -130,7 +130,7 @@ export default function Hero() {
                   ))}
                 </div>
                 <span className="text-sm text-gray-600">
-                  Trusted by <strong className="text-gray-900">800+</strong>{" "}
+                  Trusted by <strong className="text-gray-900">50+</strong>{" "}
                   brands
                 </span>
               </div>

@@ -45,7 +45,7 @@ export default function CTA() {
 
             {/* Subheadline */}
             <p className="text-lg lg:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              Join 800+ businesses already using WhatsPilot, a leading whatsapp
+              Join 50+ businesses already using WhatsPilot, a leading whatsapp
               marketing tools, to automate and scale their customer
               communication. No credit card required.
             </p>

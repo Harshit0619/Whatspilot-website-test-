@@ -98,7 +98,7 @@ export default function Testimonials() {
               Testimonials
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Loved by <span className="gradient-text">800+ Businesses</span>
+              Loved by <span className="gradient-text">50+ Businesses</span>
             </h2>
             <p className="text-lg text-gray-600">
               See what our customers have to say about their experience with
@@ -216,7 +216,7 @@ export default function Testimonials() {
             }`}
           >
             {[
-              { value: "800+", label: "Active Customers" },
+              { value: "50+", label: "Active Customers" },
               { value: "99%", label: "Satisfaction Rate" },
               { value: "30M+", label: "Messages Sent" },
               { value: "4.9/5", label: "Average Rating" },
