@@ -15,6 +15,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Features", href: "/features" },
   { name: "Pricing", href: "/pricing" },
+  { name: "Contact", href: "/contact" },
   { name: "Blog", href: "/blog" },
 ];
 
@@ -47,7 +48,7 @@ export default function Navigation({ scrollY }: NavigationProps) {
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="gradient-bg-animated text-white text-center py-2.5 px-4 text-sm font-medium">
+        <div className="gradient-bg-animated text-white text-center py-3 px-4 text-sm font-medium">
           <span>Now Hiring: Are You A Driven And Motivated Developer? </span>
           <Link href="/careers" className="underline hover:no-underline ml-1">
             Join our Team
