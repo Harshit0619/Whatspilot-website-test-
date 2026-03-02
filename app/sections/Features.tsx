@@ -100,12 +100,20 @@ export default function Features() {
               Powerful Features for{" "}
               <span className="gradient-text">Modern Businesses</span>
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 mb-8">
               Everything you need to automate and scale your WhatsApp
               communication. Our whatsapp marketing software includes everything
               from basic automation to advanced campaign tools in one powerful
               platform.
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="/features" className="btn-primary">
+                View All Features
+              </a>
+              <a href="/contact" className="btn-secondary">
+                Contact Sales
+              </a>
+            </div>
           </div>
 
           {/* Features Grid */}
@@ -175,7 +183,7 @@ export default function Features() {
                                 ? "View Analytics"
                                 : "Learn more about features"
                   }
-                  className="inline-flex items-center gap-2 text-sm font-medium text-whatsapp-green opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-whatsapp-green transition-opacity duration-300"
                 >
                   {feature.title === "Bulk Messaging"
                     ? "Explore Bulk Messaging"

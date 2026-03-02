@@ -164,7 +164,7 @@ export default function PricingPage() {
             </p>
 
             {/* Billing Toggle */}
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center  gap-4">
               <span
                 className={`text-sm font-medium ${!isYearly ? "text-gray-900" : "text-gray-500"}`}
               >
