@@ -4,6 +4,7 @@ import NavigationWrapper from "@/components/NavigationWrapper";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.whatspilot.online"),
   title: "WhatsPilot - WhatsApp Business Automation Platform",
   description:
     "Transform your WhatsApp into a powerful business automation platform. Connect, engage, and scale with ease using WhatsPilot's intelligent automation tools.",

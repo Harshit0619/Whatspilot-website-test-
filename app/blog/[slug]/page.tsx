@@ -22,6 +22,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${post.title} | WhatsPilot Blog`,
     description: post.excerpt,
     keywords: post.tags,
+    robots: { index: false, follow: true },
+    alternates: {
+      canonical: `https://www.whatspilot.online/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,

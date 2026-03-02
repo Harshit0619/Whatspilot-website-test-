@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     description: "Powerful WhatsApp automation features for your business",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.whatspilot.online/features",
+  },
 };
 
 export default function FeaturesPage() {

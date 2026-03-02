@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     description: "Get in touch with WhatsPilot",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.whatspilot.online/contact",
+  },
 };
 
 export default function ContactPage() {

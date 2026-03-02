@@ -48,6 +48,8 @@ To implement automatic assignment in your WhatsApp Business setup, you need:
 3. Clear criteria for assignment
 4. Monitoring and adjustment capabilities
 
+For handling common queries efficiently, consider complementing automatic assignment with [WhatsApp bots for FAQs](/blog/whatsapp-bots-for-faqs) to reduce agent workload.
+
 ## Conclusion
 
 Automatic assignment is essential for scaling your WhatsApp support operations. It ensures every customer gets prompt, appropriate assistance while optimizing your team's productivity.

@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     description: "Affordable WhatsApp automation pricing plans",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.whatspilot.online/pricing",
+  },
 };
 
 export default function PricingPage() {

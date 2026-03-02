@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     description: "WhatsApp automation tips and business communication insights",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.whatspilot.online/blog",
+  },
 };
 
 export default async function BlogPage() {

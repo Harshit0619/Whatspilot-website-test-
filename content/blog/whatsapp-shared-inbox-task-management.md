@@ -37,6 +37,10 @@ Task management features allow managers to assign specific queries to agents, se
 
 WhatsApp Automation takes your shared inbox to the next level. You can set up auto-replies for common queries, schedule follow-up messages, and create workflows that automatically assign conversations based on keywords or customer type.
 
+For advanced automation, consider implementing [automatic assignment rules](/blog/automatic-assignment-whatsapp-conversations) to further streamline your support operations.
+
+You can also integrate with your [WhatsApp CRM](/blog/whatsapp-crm-integration-guide) to track customer interactions and manage tasks more effectively.
+
 ## Conclusion
 
 For Indian businesses looking to scale their customer support operations, investing in a WhatsApp Shared Inbox with task management capabilities is a game-changer. It not only improves efficiency but also enhances customer satisfaction through faster, more coordinated responses.

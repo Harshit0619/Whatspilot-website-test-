@@ -29,6 +29,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: feature.seo.title,
     description: feature.seo.description,
     keywords: feature.seo.keywords,
+    alternates: {
+      canonical: `https://www.whatspilot.online/features/${feature.slug}`,
+    },
     openGraph: {
       title: feature.seo.title,
       description: feature.seo.description,

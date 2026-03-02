@@ -95,3 +95,5 @@ Bot: "Confirming appointment for tomorrow at 10:00 AM. Reply YES to confirm."
 ## Conclusion
 
 WhatsApp bots are a cost-effective solution for Indian service businesses to handle FAQs automatically. They improve customer experience, reduce workload, and ensure your team can focus on complex queries that require human attention.
+
+To further automate your support, learn about [automatic assignment of WhatsApp conversations](/blog/automatic-assignment-whatsapp-conversations) to multiple agents.

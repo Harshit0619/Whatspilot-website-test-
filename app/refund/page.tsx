@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     "WhatsPilot Refund Policy - Learn about our no-refund policy for subscription and services.",
   keywords: ["refund policy", "refund", "billing", "cancellation", "terms"],
+  alternates: {
+    canonical: "https://www.whatspilot.online/refund",
+  },
 };
 
 export default function RefundPage() {

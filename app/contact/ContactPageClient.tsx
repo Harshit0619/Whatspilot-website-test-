@@ -86,19 +86,58 @@ export default function ContactPageClient() {
   return (
     <div className="pt-28 pb-20 bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="section-padding mb-16">
+      {/* We're Here to Help - Prominent Section */}
+      <section className="section-padding bg-gradient-to-b from-gray-50 to-white mb-20 p-4">
         <div className="container-wide">
-          <div className="text-center max-w-2xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="inline-block px-4 py-1.5 rounded-full bg-whatsapp-green/10 text-whatsapp-green text-sm font-medium mb-4">
               Contact Us
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Get in <span className="gradient-text">Touch</span>
-            </h1>
-            <p className="text-lg text-gray-600 mb-8">
-              Have questions about WhatsApp automation? Our team is here to help
-              you get started and make the most of WhatsPilot.
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              We're Here to Help
+            </h2>
+            <p className="text-lg text-gray-600">
+              At WhatsPilot, we pride ourselves on providing exceptional customer support. 
+              Whether you're exploring our platform or already a customer, our team is ready to assist you.
             </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-whatsapp-green/30 transition-all duration-300">
+              <div className="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
+                <MessageCircle className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Pre-Sales Inquiries
+              </h3>
+              <p className="text-gray-600">
+                Not sure which plan fits your business needs? Our sales team can help you understand 
+                WhatsPilot's features and find the perfect solution for your WhatsApp marketing strategy.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-whatsapp-green/30 transition-all duration-300">
+              <div className="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-4">
+                <Phone className="w-7 h-7 text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Technical Support
+              </h3>
+              <p className="text-gray-600">
+                Facing issues with WhatsApp automation, message scheduling, or chatbot setup? 
+                Our technical support team provides step-by-step guidance to resolve your concerns quickly.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-whatsapp-green/30 transition-all duration-300">
+              <div className="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center mb-4">
+                <Mail className="w-7 h-7 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Billing & Account
+              </h3>
+              <p className="text-gray-600">
+                Questions about subscriptions, upgrades, or account management? 
+                Reach out for assistance with payments, plan changes, or account settings.
+              </p>
+            </div>
           </div>
         </div>
       </section>

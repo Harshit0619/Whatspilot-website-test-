@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     "WhatsPilot Privacy Policy - Learn how we collect, use, and protect your personal information.",
   keywords: ["privacy policy", "data protection", "privacy", "terms"],
+  alternates: {
+    canonical: "https://www.whatspilot.online/privacy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

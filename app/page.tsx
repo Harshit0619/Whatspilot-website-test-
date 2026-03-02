@@ -47,6 +47,9 @@ export const metadata: Metadata = {
       "Transform your WhatsApp into a powerful business automation platform",
     images: ["/hero-dashboard.jpg"],
   },
+  alternates: {
+    canonical: "https://www.whatspilot.online/",
+  },
 };
 
 export default function HomePage() {

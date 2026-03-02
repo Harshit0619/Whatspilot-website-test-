@@ -34,3 +34,5 @@ WhatsApp supports images, videos, documents, and voice messages, allowing for ri
 ## Conclusion
 
 For businesses targeting the Indian market, WhatsApp CRM offers superior engagement rates, faster communication, and a more personal touch. It's time to shift your customer communication strategy to where your customers already are: WhatsApp.
+
+To get started, learn how to [integrate WhatsApp with your CRM](/blog/whatsapp-crm-integration-guide) for unified customer management.
