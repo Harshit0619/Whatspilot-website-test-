@@ -57,3 +57,20 @@ export function getPostsByCategory(category: string): BlogPost[] {
     ? allPosts
     : allPosts.filter(post => post.category === category);
 }
+
+export function getRelatedPosts(currentSlug: string, category: string, tags: string[]): BlogPost[] {
+  const allPosts = getAllPosts();
+  
+  return allPosts
+    .filter(post => post.slug !== currentSlug)
+    .map(post => {
+      let score = 0;
+      if (post.category === category) score += 3;
+      const sharedTags = post.tags.filter(tag => tags.includes(tag));
+      score += sharedTags.length * 2;
+      return { post, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map(item => item.post);
+}
