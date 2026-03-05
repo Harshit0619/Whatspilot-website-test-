@@ -86,10 +86,10 @@ export const featuresData: Feature[] = [
       { name: 'HubSpot', description: 'Sync customer data' },
       { name: 'Shopify', description: 'E-commerce notifications' },
     ],
-    seo: {
-      title: 'Bulk Messaging for WhatsApp - Send Mass Messages Easily | WhatsPilot',
-      description: 'Send personalized bulk WhatsApp messages to thousands of contacts. Schedule campaigns, track delivery, and scale your marketing with one click.',
-      keywords: [
+     seo: {
+       title: 'Bulk WhatsApp Message Sender Software for Easy Outreach',
+       description: 'Transform outreach with bulk WhatsApp sender software! Send bulk WhatsApp messages to instantly engage customers and amplify your marketing efforts.',
+       keywords: [
         'bulk messaging',
         'whatsapp broadcast',
         'mass messaging',
@@ -160,10 +160,10 @@ export const featuresData: Feature[] = [
       { name: 'Make.com', description: 'Visual workflow automation' },
       { name: 'Cal.com', description: 'Scheduling integration' },
     ],
-    seo: {
-      title: 'Schedule WhatsApp Messages - Automate Your Messaging | WhatsPilot',
-      description: 'Schedule WhatsApp messages in advance. Set recurring messages, timezone-aware delivery, and automate your communication workflow.',
-      keywords: [
+     seo: {
+       title: 'Schedule WhatsApp Messages Easily with WhatsPilot -Try Now',
+       description: 'WhatsApp message scheduler at your service! Take control of your messaging with timezone-aware scheduling and recurring message options.',
+       keywords: [
         'schedule whatsapp messages',
         'whatsapp automation',
         'auto send whatsapp',
@@ -233,10 +233,10 @@ export const featuresData: Feature[] = [
       { name: 'HubSpot', description: 'Sync contact segments' },
       { name: 'Make.com', description: 'Automated workflows' },
     ],
-    seo: {
-      title: 'WhatsApp Groups Management - Broadcast & Analytics | WhatsPilot',
-      description: 'Manage WhatsApp groups efficiently. Extract members, send targeted messages, and automate group interactions with advanced analytics.',
-      keywords: [
+     seo: {
+       title: 'Best WhatsApp Group Management Tool for Easy Control',
+       description: 'Group management made easy! Unlock the potential of our WhatsApp group management tool for seamless community building and targeted broadcasts.',
+       keywords: [
         'whatsapp groups',
         'group management',
         'whatsapp broadcast',
@@ -252,8 +252,8 @@ export const featuresData: Feature[] = [
     id: 'chatbot-automation',
     title: 'Chatbot Automation',
     slug: 'chatbot-automation',
-    description: 'AI-powered responses that engage customers 24/7. Set up auto-replies and handle FAQs automatically.',
-    longDescription: 'Provide instant, 24/7 customer support with our intelligent chatbot automation. Train your bot with FAQs, set keyword-based responses, and use AI to handle complex conversations. Qualify leads, provide instant answers, and ensure no message goes unanswered, even outside business hours.',
+    description: 'AI powered chatbots and AI driven chatbots provide 24/7 automated responses. Set up auto-replies and handle FAQs automatically.',
+    longDescription: 'Provide instant, 24/7 customer support with our intelligent chatbot automation. Our AI powered chatbots and AI driven chatbots leverage advanced NLP. Train your bot with FAQs, set keyword-based responses, and use AI to handle complex conversations. Qualify leads, provide instant answers, and ensure no message goes unanswered, even outside business hours.',
     icon: 'Bot',
     color: '#25d366',
     benefits: [
@@ -300,19 +300,21 @@ export const featuresData: Feature[] = [
       { name: 'HubSpot', description: 'CRM integration' },
       { name: 'Make.com', description: 'Complex workflow automation' },
     ],
-    seo: {
-      title: 'Chatbot Automation for WhatsApp - AI-Powered Support | WhatsPilot',
-      description: 'Automate WhatsApp responses with AI-powered chatbot. Handle FAQs 24/7, qualify leads automatically, and provide instant customer support.',
-      keywords: [
-        'whatsapp chatbot',
-        'chatbot automation',
-        'AI chatbot',
-        'auto reply whatsapp',
-        'whatsapp automation',
-        'customer support chatbot',
-        'lead qualification',
-        'whatsapp marketing tools',
-      ],
+     seo: {
+       title: 'Smart AI Powered Bots with Automated Chatbot Features',
+       description: 'Automated chatbot solutions with AI powered bots provide instant, around-the-clock support! Qualify leads and automate your WhatsApp communication today.',
+       keywords: [
+         'whatsapp chatbot',
+         'chatbot automation',
+         'AI chatbot',
+         'ai powered chatbots',
+         'ai driven chatbots',
+         'auto reply whatsapp',
+         'whatsapp automation',
+         'customer support chatbot',
+         'lead qualification',
+         'whatsapp marketing tools',
+       ],
     },
   },
   {
@@ -371,10 +373,10 @@ export const featuresData: Feature[] = [
       { name: 'Make.com', description: 'Workflow integration' },
       { name: 'Shopify', description: 'E-commerce notifications' },
     ],
-    seo: {
-      title: 'WhatsApp Template Library - Pre-Built Message Templates | WhatsPilot',
-      description: 'Access 100+ pre-designed WhatsApp message templates. Create, save, and reuse WhatsApp marketing templates and campaign templates for marketing, support, and notifications.',
-      keywords: [
+     seo: {
+       title: 'Effective WhatsApp Marketing Template for Quick Campaigns',
+       description: 'WhatsApp marketing templates made easy! Access 100+ ready-to-use designs and boost your campaigns while saving time with reusable components.',
+       keywords: [
         'whatsapp templates',
         'whatsapp template',
         'message templates',
@@ -446,10 +448,10 @@ export const featuresData: Feature[] = [
       { name: 'Make.com', description: 'Automated reporting' },
       { name: 'HubSpot', description: 'Sync engagement data' },
     ],
-    seo: {
-      title: 'WhatsApp Analytics Dashboard - Track & Optimize Performance | WhatsPilot',
-      description: 'Monitor WhatsApp campaign performance, user engagement metrics, and marketing performance with real-time tracking analytics. Get insights to optimize your messaging strategy.',
-      keywords: [
+     seo: {
+       title: 'Track Campaign Performance with User Engagement Metrics',
+       description: 'Campaign performance and user engagement metrics at your fingertips! Get real-time insights into WhatsApp communication with our analytics dashboard.',
+       keywords: [
         'whatsapp analytics',
         'analytics dashboard',
         'message tracking',

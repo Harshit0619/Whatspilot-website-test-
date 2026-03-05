@@ -9,9 +9,9 @@ import Blog from "./sections/Blog";
 import CTA from "./sections/CTA";
 
 export const metadata: Metadata = {
-  title: "WhatsPilot - WhatsApp Business Automation Platform",
+  title: "Boost Your WhatsApp Marketing with WhatsPilot Automation & Tools",
   description:
-    "Transform your WhatsApp into a powerful business automation platform. Connect, engage, and scale with ease using WhatsPilot's intelligent automation tools.",
+    "Use WhatsApp marketing tools to engage your audience! Deliver impactful WhatsApp promotional messages that elevate customer interaction and sales.",
   keywords: [
     "whatsapp",
     "automation",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     "whatsapp campaign tools",
   ],
   openGraph: {
-    title: "WhatsPilot - WhatsApp Business Automation Platform",
+    title: "Boost Your WhatsApp Marketing with WhatsPilot Automation & Tools",
     description:
-      "Transform your WhatsApp into a powerful business automation platform",
+      "Use WhatsApp marketing tools to engage your audience! Deliver impactful WhatsApp promotional messages that elevate customer interaction and sales.",
     type: "website",
     images: [
       {
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "WhatsPilot - WhatsApp Business Automation Platform",
+    title: "Boost Your WhatsApp Marketing with WhatsPilot Automation & Tools",
     description:
-      "Transform your WhatsApp into a powerful business automation platform",
+      "Use WhatsApp marketing tools to engage your audience! Deliver impactful WhatsApp promotional messages that elevate customer interaction and sales.",
     images: ["/hero-dashboard.jpg"],
   },
   alternates: {
