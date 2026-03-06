@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import useAutoCurrency from "@/hooks/useAutoCurrency";
 
 const plans = [
   {
@@ -18,6 +19,8 @@ const plans = [
     icon: Zap,
     monthlyPrice: 1599,
     yearlyPrice: 1499,
+    monthlyPriceUSD: 14,
+    yearlyPriceUSD: 13,
     description: "Perfect for small businesses getting started",
     features: [
       "30,000 messages/month",
@@ -46,6 +49,8 @@ const plans = [
     icon: Sparkles,
     monthlyPrice: 3999,
     yearlyPrice: 3333,
+    monthlyPriceUSD: 35,
+    yearlyPriceUSD: 31,
     description: "Best for growing businesses",
     features: [
       "Unlimited messages",
@@ -74,6 +79,8 @@ const plans = [
     icon: Crown,
     monthlyPrice: 9999,
     yearlyPrice: 8999,
+    monthlyPriceUSD: 99,
+    yearlyPriceUSD: 89,
     description: "For large-scale operations",
     features: [
       "Unlimited messages",
@@ -128,6 +135,7 @@ export default function PricingPage() {
   const [isYearly, setIsYearly] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { currency } = useAutoCurrency();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -136,7 +144,7 @@ export default function PricingPage() {
           setIsInView(true);
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -244,19 +252,29 @@ export default function PricingPage() {
                   <div className="mb-6">
                     <div className="flex items-baseline gap-1">
                       <span className="text-2xl font-medium text-gray-500">
-                        ₹
+                        {currency === "INR" ? "₹" : "$"}
                       </span>
                       <span className="text-4xl lg:text-5xl font-bold text-gray-900">
                         {isYearly
-                          ? plan.yearlyPrice.toLocaleString()
-                          : plan.monthlyPrice.toLocaleString()}
+                          ? (currency === "INR"
+                              ? plan.yearlyPrice.toLocaleString()
+                              : plan.yearlyPriceUSD.toLocaleString())
+                          : (currency === "INR"
+                              ? plan.monthlyPrice.toLocaleString()
+                              : plan.monthlyPriceUSD.toLocaleString())}
                       </span>
                       <span className="text-gray-500">/month</span>
+                      <span className="text-sm font-medium text-gray-500 ml-2">
+                        ({currency === "INR" ? "INR" : "USD"})
+                      </span>
                     </div>
                     {isYearly && (
                       <p className="text-sm text-gray-500 mt-1">
-                        Billed annually (₹
-                        {(plan.yearlyPrice * 12).toLocaleString()}/year)
+                        Billed annually ({currency === "INR" ? "₹" : "$"}
+                        {currency === "INR"
+                          ? (plan.yearlyPrice * 12).toLocaleString()
+                          : (plan.yearlyPriceUSD * 12).toLocaleString()}
+                        /year)
                       </p>
                     )}
                   </div>
