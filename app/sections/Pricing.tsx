@@ -271,6 +271,24 @@ export default function Pricing() {
                         {plan.cta}
                       </Button>
                     </a>
+                  ) : plan.cta === "Contact Sales" ? (
+                    <a
+                      href="https://calendly.com/dummy"
+                      title="Book a demo to learn about WhatsApp marketing tools"
+                      aria-label={plan.cta}
+                      className="block"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        className={`w-full mb-8 ${
+                          plan.popular ? "btn-primary" : "btn-secondary"
+                        }`}
+                        aria-label={plan.cta}
+                      >
+                        {plan.cta}
+                      </Button>
+                    </a>
                   ) : (
                     <Button
                       className={`w-full mb-8 ${

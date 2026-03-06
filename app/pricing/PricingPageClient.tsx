@@ -10,7 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
+
 import useAutoCurrency from "@/hooks/useAutoCurrency";
 
 const plans = [
@@ -171,25 +171,34 @@ export default function PricingPage() {
               5-day free trial.
             </p>
 
-            {/* Billing Toggle */}
-            <div className="flex items-center justify-center  gap-4">
-              <span
-                className={`text-sm font-medium ${!isYearly ? "text-gray-900" : "text-gray-500"}`}
-              >
-                Monthly
-              </span>
-              <Switch
-                checked={isYearly}
-                onCheckedChange={setIsYearly}
-                className="data-[state=checked]:bg-whatsapp-green"
-              />
-              <span
-                className={`text-sm font-medium ${isYearly ? "text-gray-900" : "text-gray-500"}`}
-              >
-                Yearly
-              </span>
+            {/* Billing Toggle - Pill Style */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+              <div className="flex items-center gap-1 p-1 bg-gray-100 rounded-full">
+                <button
+                  type="button"
+                  onClick={() => setIsYearly(false)}
+                  className={`px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    !isYearly
+                      ? "bg-white text-gray-900 shadow-sm"
+                      : "text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  Monthly
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIsYearly(true)}
+                  className={`px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    isYearly
+                      ? "bg-whatsapp-green text-white shadow-sm"
+                      : "text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  Yearly
+                </button>
+              </div>
               {isYearly && (
-                <span className="px-2 py-1 rounded-full bg-whatsapp-green/10 text-whatsapp-green text-xs font-medium">
+                <span className="px-3 py-1 rounded-full bg-whatsapp-green/10 text-whatsapp-green text-sm font-medium">
                   Save 20%
                 </span>
               )}
