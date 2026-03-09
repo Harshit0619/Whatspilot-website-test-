@@ -61,7 +61,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src="/hero-bg.jpg"
-          alt=""
+          alt="WhatsApp automation platform background"
           className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white" />
@@ -111,16 +111,16 @@ export default function Hero() {
 
               {/* Trust Badge */}
               <div className="flex items-center justify-center lg:justify-start gap-4 animate-slide-up animation-delay-400">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <img
-                      key={i}
-                      src={`/testimonial-${i}.jpg`}
-                      alt=""
-                      className="w-8 h-8 rounded-full border-2 border-white object-cover"
-                    />
-                  ))}
-                </div>
+                 <div className="flex -space-x-2">
+                   {[1, 2, 3, 4].map((i) => (
+                     <img
+                       key={i}
+                       src={`/testimonial-${i}.jpg`}
+                       alt={i === 1 ? "Khushi Rajput" : i === 2 ? "Tanya Shah" : i === 3 ? "Ravi Mehta" : "Kushal Gupta"}
+                       className="w-8 h-8 rounded-full border-2 border-white object-cover"
+                     />
+                   ))}
+                 </div>
                 <div className="flex items-center gap-1">
                   {[1, 2, 3, 4, 5].map((i) => (
                     <Star
