@@ -257,7 +257,7 @@ export default function Pricing() {
                   {plan.cta === "Start Free Trial" ||
                   plan.cta === "Get Started" ? (
                     <a
-                      href="https://app.whatspilot.online"
+                      href="https://app.whatspilot.online/auth/register"
                       title="Get started with the WhatsApp marketing software"
                       aria-label={plan.cta}
                       className="block"

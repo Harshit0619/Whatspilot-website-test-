@@ -291,7 +291,7 @@ export default function PricingPage() {
                   {/* CTA Button */}
                   {plan.cta === "Start Free Trial" ||
                   plan.cta === "Get Started" ? (
-                    <a href="https://app.whatspilot.online" className="block">
+                    <a href="https://app.whatspilot.online/auth/register" className="block">
                       <Button
                         className={`w-full mb-8 ${
                           plan.popular ? "btn-primary" : "btn-secondary"

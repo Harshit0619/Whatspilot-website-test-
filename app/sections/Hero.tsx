@@ -137,7 +137,7 @@ export default function Hero() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up animation-delay-500">
                 <a
-                  href="https://app.whatspilot.online"
+                  href="https://app.whatspilot.online/auth/register"
                   title="Start your free trial of the WhatsApp marketing platform"
                   aria-label="Start Free Trial"
                 >

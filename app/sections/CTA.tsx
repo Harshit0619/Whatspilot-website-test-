@@ -53,7 +53,7 @@ export default function CTA() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://app.whatspilot.online"
+                href="https://app.whatspilot.online/auth/register"
                 title="Start your free trial of the WhatsApp marketing platform"
                 aria-label="Start Free Trial"
               >

@@ -107,27 +107,12 @@ export default function Navigation({ scrollY }: NavigationProps) {
                   Login
                 </Link>
                 <a
-                  href="https://calendly.com/dummy"
+                  href="https://app.whatspilot.online/auth/register"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Button className="btn-primary gap-2">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 32 32"
-                      fill="none"
-                      className="transform -rotate-12"
-                    >
-                      <path
-                        d="M3 16L28 4L19 28L15 18L3 16Z"
-                        fill="white"
-                        stroke="white"
-                        strokeWidth="1.5"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    Book Demo
+                    Start Free Trial
                   </Button>
                 </a>
               </div>
@@ -177,28 +162,13 @@ export default function Navigation({ scrollY }: NavigationProps) {
                 Login
               </Link>
               <a
-                href="https://calendly.com/dummy"
+                href="https://app.whatspilot.online/auth/register"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
               >
                 <Button className="w-full btn-primary">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    className="transform -rotate-12 mr-2"
-                  >
-                    <path
-                      d="M3 16L28 4L19 28L15 18L3 16Z"
-                      fill="white"
-                      stroke="white"
-                      strokeWidth="1.5"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  Book Demo
+                  Start Free Trial
                 </Button>
               </a>
             </div>
