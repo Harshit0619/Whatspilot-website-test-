@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "WhatsPilot Terms and Conditions - Read our terms of service for using our WhatsApp automation platform.",
   keywords: ["terms", "terms and conditions", "terms of service", "legal"],
   alternates: {
-    canonical: "https://www.whatspilot.online/terms",
+    canonical: "https://www.whatspilot.online/terms-of-service",
   },
 };
 

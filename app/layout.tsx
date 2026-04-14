@@ -3,6 +3,7 @@ import "./globals.css";
 import NavigationWrapper from "@/components/NavigationWrapper";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import ClientLayout from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.whatspilot.online"),
@@ -36,9 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <NavigationWrapper />
-        <main>{children}</main>
-        <Footer />
+        <ClientLayout>{children}</ClientLayout>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7HLK8NNMKZ"
           strategy="afterInteractive"
