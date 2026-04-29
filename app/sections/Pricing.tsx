@@ -56,17 +56,17 @@ const plans = [
       "API access",
       "Priority support",
     ],
-    cta: "Start Free Trial",
+    cta: "Get Started",
     popular: true,
     badge: "Most Popular",
   },
   {
     name: "Enterprise",
     icon: Crown,
-    monthlyPrice: 9999,
-    yearlyPrice: 8999,
-    monthlyPriceUSD: 99,
-    yearlyPriceUSD: 89,
+    monthlyPrice: null,
+    yearlyPrice: null,
+    monthlyPriceUSD: null,
+    yearlyPriceUSD: null,
     description: "For large-scale operations",
     features: [
       "Unlimited messages",
@@ -136,9 +136,8 @@ export default function Pricing() {
               Simple, Transparent <span className="gradient-text">Pricing</span>
             </h2>
             <p className="text-lg text-gray-600">
-              Choose the plan that fits your business needs. All plans include a
-              5-day free trial to send whatsapp promotional messages at scale.
-            </p>
+               Choose the plan that fits your business needs. All plans include instant access to send whatsapp promotional messages at scale.
+             </p>
           </div>
 
           {/* Billing Toggle - Pill Style */}
@@ -224,38 +223,47 @@ export default function Pricing() {
 
                   {/* Price */}
                   <div className="mb-6">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-2xl font-medium text-gray-500">
-                        {currency === "INR" ? "₹" : "$"}
-                      </span>
-                      <span className="text-4xl lg:text-5xl font-bold text-gray-900">
-                        {isYearly
-                          ? (currency === "INR"
-                              ? plan.yearlyPrice.toLocaleString()
-                              : plan.yearlyPriceUSD.toLocaleString())
-                          : (currency === "INR"
-                              ? plan.monthlyPrice.toLocaleString()
-                              : plan.monthlyPriceUSD.toLocaleString())}
-                      </span>
-                      <span className="text-gray-500">/month</span>
-                      <span className="text-sm font-medium text-gray-500 ml-2">
-                        ({currency === "INR" ? "INR" : "USD"})
-                      </span>
-                    </div>
-                    {isYearly && (
-                      <p className="text-sm text-gray-500 mt-1">
-                        Billed annually ({currency === "INR" ? "₹" : "$"}
-                        {currency === "INR"
-                          ? (plan.yearlyPrice * 12).toLocaleString()
-                          : (plan.yearlyPriceUSD * 12).toLocaleString()}
-                        /year)
-                      </p>
-                    )}
-                  </div>
+                     {plan.monthlyPrice !== null ? (
+                       <>
+                         <div className="flex items-baseline gap-1">
+                           <span className="text-2xl font-medium text-gray-500">
+                             {currency === "INR" ? "₹" : "$"}
+                           </span>
+                           <span className="text-4xl lg:text-5xl font-bold text-gray-900">
+                             {isYearly
+                               ? (currency === "INR"
+                                   ? plan.yearlyPrice.toLocaleString()
+                                   : plan.yearlyPriceUSD.toLocaleString())
+                               : (currency === "INR"
+                                   ? plan.monthlyPrice.toLocaleString()
+                                   : plan.monthlyPriceUSD.toLocaleString())}
+                           </span>
+                           <span className="text-gray-500">/month</span>
+                           <span className="text-sm font-medium text-gray-500 ml-2">
+                             ({currency === "INR" ? "INR" : "USD"})
+                           </span>
+                         </div>
+                         {isYearly && (
+                           <p className="text-sm text-gray-500 mt-1">
+                             Billed annually ({currency === "INR" ? "₹" : "$"}
+                             {currency === "INR"
+                               ? (plan.yearlyPrice * 12).toLocaleString()
+                               : (plan.yearlyPriceUSD * 12).toLocaleString()}
+                             /year)
+                           </p>
+                         )}
+                       </>
+                     ) : (
+                       <div className="flex items-baseline gap-1">
+                         <span className="text-4xl lg:text-5xl font-bold text-gray-900">
+                           Custom
+                         </span>
+                       </div>
+                     )}
+                   </div>
 
                   {/* CTA Button */}
-                  {plan.cta === "Start Free Trial" ||
-                  plan.cta === "Get Started" ? (
+                  {plan.cta === "Get Started" ? (
                     <a
                       href="https://app.whatspilot.online/auth/register"
                       title="Get started with the WhatsApp marketing software"
@@ -326,12 +334,12 @@ export default function Pricing() {
           {/* Bottom Note */}
           <div className="text-center mt-12">
             <p className="text-gray-600">
-              All plans include{" "}
-              <span className="font-medium text-gray-900">
-                5-day free trial
-              </span>{" "}
-              • No credit card required
-            </p>
+               All plans include{" "}
+               <span className="font-medium text-gray-900">
+                 instant access
+               </span>{" "}
+               • No credit card required
+             </p>
           </div>
         </div>
       </div>

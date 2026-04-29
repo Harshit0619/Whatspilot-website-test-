@@ -112,8 +112,8 @@ export default function Navigation({ scrollY }: NavigationProps) {
                   rel="noopener noreferrer"
                 >
                   <Button className="btn-primary gap-2">
-                    Start Free Trial
-                  </Button>
+                     Get Started
+                   </Button>
                 </a>
               </div>
 
@@ -162,15 +162,15 @@ export default function Navigation({ scrollY }: NavigationProps) {
                 Login
               </Link>
               <a
-                href="https://app.whatspilot.online/auth/register"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <Button className="w-full btn-primary">
-                  Start Free Trial
-                </Button>
-              </a>
+                 href="https://app.whatspilot.online/auth/register"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="block"
+               >
+                 <Button className="w-full btn-primary">
+                   Get Started
+                 </Button>
+               </a>
             </div>
           </div>
         </div>

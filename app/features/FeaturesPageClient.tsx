@@ -46,12 +46,12 @@ export default function FeaturesPageClient() {
               got you covered.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="https://app.whatspilot.online">
-                <Button className="btn-primary gap-2">
-                  Start Free Trial
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </a>
+                 <a href="https://app.whatspilot.online">
+                   <Button className="bg-white text-whatsapp-green hover:bg-gray-100 gap-2">
+                     Get Started
+                     <ArrowRight className="w-4 h-4" />
+                   </Button>
+                 </a>
               <a href="/pricing">
                 <Button className="btn-secondary">View Pricing</Button>
               </a>
@@ -200,13 +200,13 @@ export default function FeaturesPageClient() {
                 Ready to Get Started?
               </h2>
               <p className="text-white/80 mb-8 max-w-xl mx-auto">
-                Start your 5-day free trial today. No credit card required.
-              </p>
-              <a href="https://app.whatspilot.online">
-                <Button className="bg-white text-whatsapp-green hover:bg-gray-100 gap-2">
-                  Start Free Trial
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
+                 Get started instantly. No credit card required.
+               </p>
+               <a href="https://app.whatspilot.online">
+                  <Button className="bg-white text-whatsapp-green hover:bg-gray-100 gap-2">
+                   Get Started
+                   <ArrowRight className="w-4 h-4" />
+                 </Button>
               </a>
             </div>
           </div>

@@ -70,17 +70,17 @@ const plans = [
       "Priority support",
     ],
     notIncluded: ["Custom onboarding", "Dedicated account manager"],
-    cta: "Start Free Trial",
+    cta: "Get Started",
     popular: true,
     badge: "Most Popular",
   },
   {
     name: "Enterprise",
     icon: Crown,
-    monthlyPrice: 9999,
-    yearlyPrice: 8999,
-    monthlyPriceUSD: 99,
-    yearlyPriceUSD: 89,
+    monthlyPrice: null,
+    yearlyPrice: null,
+    monthlyPriceUSD: null,
+    yearlyPriceUSD: null,
     description: "For large-scale operations",
     features: [
       "Unlimited messages",
@@ -114,9 +114,9 @@ const faqs = [
       "Yes, you can upgrade or downgrade your plan at any time. When upgrading, you will get immediate access to new features. When downgrading, changes will take effect at the start of your next billing cycle.",
   },
   {
-    question: "What happens after my free trial ends?",
+    question: "What happens after I sign up?",
     answer:
-      "After your 5-day free trial, you can choose to subscribe to any of our plans. If you decide not to continue, your account will be downgraded to a limited free version.",
+      "You can choose to subscribe to any of our plans at any time. If you decide not to continue with a paid plan, your account will be downgraded to a limited free version.",
   },
   {
     question:
@@ -167,9 +167,8 @@ export default function PricingPage() {
               Simple, Transparent <span className="gradient-text">Pricing</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8">
-              Choose the plan that fits your business needs. All plans include a
-              5-day free trial.
-            </p>
+               Choose the plan that fits your business needs. All plans include instant access.
+             </p>
 
             {/* Billing Toggle - Pill Style */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
@@ -259,38 +258,47 @@ export default function PricingPage() {
 
                   {/* Price */}
                   <div className="mb-6">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-2xl font-medium text-gray-500">
-                        {currency === "INR" ? "₹" : "$"}
-                      </span>
-                      <span className="text-4xl lg:text-5xl font-bold text-gray-900">
-                        {isYearly
-                          ? (currency === "INR"
-                              ? plan.yearlyPrice.toLocaleString()
-                              : plan.yearlyPriceUSD.toLocaleString())
-                          : (currency === "INR"
-                              ? plan.monthlyPrice.toLocaleString()
-                              : plan.monthlyPriceUSD.toLocaleString())}
-                      </span>
-                      <span className="text-gray-500">/month</span>
-                      <span className="text-sm font-medium text-gray-500 ml-2">
-                        ({currency === "INR" ? "INR" : "USD"})
-                      </span>
-                    </div>
-                    {isYearly && (
-                      <p className="text-sm text-gray-500 mt-1">
-                        Billed annually ({currency === "INR" ? "₹" : "$"}
-                        {currency === "INR"
-                          ? (plan.yearlyPrice * 12).toLocaleString()
-                          : (plan.yearlyPriceUSD * 12).toLocaleString()}
-                        /year)
-                      </p>
-                    )}
-                  </div>
+                     {plan.monthlyPrice !== null ? (
+                       <>
+                         <div className="flex items-baseline gap-1">
+                           <span className="text-2xl font-medium text-gray-500">
+                             {currency === "INR" ? "₹" : "$"}
+                           </span>
+                           <span className="text-4xl lg:text-5xl font-bold text-gray-900">
+                             {isYearly
+                               ? (currency === "INR"
+                                   ? plan.yearlyPrice.toLocaleString()
+                                   : plan.yearlyPriceUSD.toLocaleString())
+                               : (currency === "INR"
+                                   ? plan.monthlyPrice.toLocaleString()
+                                   : plan.monthlyPriceUSD.toLocaleString())}
+                           </span>
+                           <span className="text-gray-500">/month</span>
+                           <span className="text-sm font-medium text-gray-500 ml-2">
+                             ({currency === "INR" ? "INR" : "USD"})
+                           </span>
+                         </div>
+                         {isYearly && (
+                           <p className="text-sm text-gray-500 mt-1">
+                             Billed annually ({currency === "INR" ? "₹" : "$"}
+                             {currency === "INR"
+                               ? (plan.yearlyPrice * 12).toLocaleString()
+                               : (plan.yearlyPriceUSD * 12).toLocaleString()}
+                             /year)
+                           </p>
+                         )}
+                       </>
+                     ) : (
+                       <div className="flex items-baseline gap-1">
+                         <span className="text-4xl lg:text-5xl font-bold text-gray-900">
+                           Custom
+                         </span>
+                       </div>
+                     )}
+                   </div>
 
                   {/* CTA Button */}
-                  {plan.cta === "Start Free Trial" ||
-                  plan.cta === "Get Started" ? (
+                  {plan.cta === "Get Started" ? (
                     <a href="https://app.whatspilot.online/auth/register" className="block">
                       <Button
                         className={`w-full mb-8 ${

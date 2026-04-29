@@ -30,12 +30,12 @@ export default function CTA() {
         <div className="container-wide">
           <div className="max-w-3xl mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8">
-              <Sparkles className="w-4 h-4 text-white" />
-              <span className="text-sm font-medium text-white">
-                Start Your Free Trial Today
-              </span>
-            </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8">
+               <Sparkles className="w-4 h-4 text-white" />
+               <span className="text-sm font-medium text-white">
+                 Get Started Today
+               </span>
+             </div>
 
             {/* Headline */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
@@ -53,20 +53,20 @@ export default function CTA() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://app.whatspilot.online/auth/register"
-                title="Start your free trial of the WhatsApp marketing platform"
-                aria-label="Start Free Trial"
-              >
-                <Button
-                  size="lg"
-                  className="bg-white text-whatsapp-green hover:bg-gray-100 gap-2 px-8 py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-                  aria-label="Start Free Trial"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  Start Free Trial
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </a>
+                 href="https://app.whatspilot.online/auth/register"
+                 title="Get started with the WhatsApp marketing platform"
+                 aria-label="Get Started"
+               >
+                 <Button
+                   size="lg"
+                   className="bg-white text-whatsapp-green hover:bg-gray-100 gap-2 px-8 py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                   aria-label="Get Started"
+                 >
+                   <MessageCircle className="w-5 h-5" />
+                   Get Started
+                   <ArrowRight className="w-5 h-5" />
+                 </Button>
+               </a>
               <a
                 href="https://calendly.com/dummy"
                 title="Book a demo to explore WhatsApp marketing tools"
@@ -88,19 +88,19 @@ export default function CTA() {
             {/* Trust Indicators */}
             <div className="flex flex-wrap items-center justify-center gap-6 mt-10 text-white/70 text-sm">
               <span className="flex items-center gap-2">
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                5-Day Free Trial
-              </span>
+                 <svg
+                   className="w-5 h-5"
+                   fill="currentColor"
+                   viewBox="0 0 20 20"
+                 >
+                   <path
+                     fillRule="evenodd"
+                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                     clipRule="evenodd"
+                   />
+                 </svg>
+                 Instant Access
+               </span>
               <span className="flex items-center gap-2">
                 <svg
                   className="w-5 h-5"
