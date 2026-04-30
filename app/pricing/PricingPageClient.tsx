@@ -309,7 +309,7 @@ export default function PricingPage() {
                       </Button>
                     </a>
                   ) : plan.cta === "Contact Sales" ? (
-                    <a href="/contact" className="block">
+                    <a href="https://scheduler.zoom.us/aiclex-technologies" className="block">
                       <Button
                         className={`w-full mb-8 ${
                           plan.popular ? "btn-primary" : "btn-secondary"

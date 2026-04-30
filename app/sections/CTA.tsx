@@ -68,7 +68,7 @@ export default function CTA() {
                  </Button>
                </a>
               <a
-                href="https://calendly.com/dummy"
+                href="https://scheduler.zoom.us/aiclex-technologies"
                 title="Book a demo to explore WhatsApp marketing tools"
                 aria-label="Book a Demo"
                 target="_blank"

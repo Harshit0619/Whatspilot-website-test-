@@ -281,7 +281,7 @@ export default function Pricing() {
                     </a>
                   ) : plan.cta === "Contact Sales" ? (
                     <a
-                      href="https://calendly.com/dummy"
+                      href="https://scheduler.zoom.us/aiclex-technologies"
                       title="Book a demo to learn about WhatsApp marketing tools"
                       aria-label={plan.cta}
                       className="block"

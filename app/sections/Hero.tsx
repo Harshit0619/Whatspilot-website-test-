@@ -151,7 +151,7 @@ export default function Hero() {
                    </Button>
                  </a>
                 <a
-                  href="https://calendly.com/dummy"
+                  href="https://scheduler.zoom.us/aiclex-technologies"
                   title="Book a demo to learn about WhatsApp marketing tools"
                   aria-label="Book Demo"
                   target="_blank"
