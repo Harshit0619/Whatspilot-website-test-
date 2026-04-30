@@ -109,6 +109,10 @@ export default function Footer() {
                 platform. Connect, engage, and scale with ease.
               </p>
 
+              <p className="text-sm font-semibold text-whatsapp-green">
+                A Product of Aiclex Technologies
+              </p>
+
               {/* Newsletter */}
               <div className="space-y-3">
                 <h4 className="font-semibold text-gray-900">
@@ -309,7 +313,7 @@ export default function Footer() {
               <p className="text-gray-400">
                 © {new Date().getFullYear()} WhatsPilot. All rights reserved.
               </p>
-              <p className="text-gray-500">Made with ❤️ in India</p>
+              <p className="text-gray-500">A Product of Aiclex Technologies</p>
             </div>
           </div>
         </div>
