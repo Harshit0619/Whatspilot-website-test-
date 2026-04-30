@@ -12,7 +12,7 @@ const faqs = [
   {
     question: "Do I need a credit card to sign up?",
     answer:
-      "No, you can start your free trial without a credit card. We believe in letting you experience the full power of WhatsPilot before making any commitment. Simply sign up with your email and start automating your WhatsApp communication.",
+      "No, you can get started instantly without a credit card. We believe in letting you experience the full power of WhatsPilot before making any commitment. Simply sign up with your email and start automating your WhatsApp communication. A credit card is required only when you're ready to purchase a plan.",
   },
   {
     question: "Why does my business need a chatbot?",

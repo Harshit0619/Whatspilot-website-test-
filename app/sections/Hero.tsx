@@ -137,19 +137,19 @@ export default function Hero() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up animation-delay-500">
                 <a
-                  href="https://app.whatspilot.online/auth/register"
-                  title="Start your free trial of the WhatsApp marketing platform"
-                  aria-label="Start Free Trial"
-                >
-                  <Button
-                    size="lg"
-                    className="btn-primary gap-2 w-full sm:w-auto"
-                    aria-label="Start Free Trial"
-                  >
-                    Start Free Trial
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </a>
+                   href="https://app.whatspilot.online/auth/register"
+                   title="Get started with the WhatsApp marketing platform"
+                   aria-label="Get Started"
+                 >
+                   <Button
+                     size="lg"
+                     className="btn-primary gap-2 w-full sm:w-auto"
+                     aria-label="Get Started"
+                   >
+                     Get Started
+                     <ArrowRight className="w-4 h-4" />
+                   </Button>
+                 </a>
                 <a
                   href="https://calendly.com/dummy"
                   title="Book a demo to learn about WhatsApp marketing tools"
@@ -172,10 +172,10 @@ export default function Hero() {
               {/* Features List */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4 animate-slide-up animation-delay-600">
                 {[
-                  "No Credit Card Required",
-                  "5-Day Free Trial",
-                  "24/7 Support",
-                ].map((feature) => (
+                   "No Credit Card Required",
+                   "Instant Access",
+                   "24/7 Support",
+                 ].map((feature) => (
                   <div
                     key={feature}
                     className="flex items-center gap-1.5 text-sm text-gray-600"

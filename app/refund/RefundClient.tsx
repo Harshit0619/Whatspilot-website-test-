@@ -113,7 +113,7 @@ const sections = [
             to understand available functionality
           </li>
           <li>Contact us with any questions before making a purchase</li>
-          <li>Take advantage of our free trial</li>
+          <li>Take advantage of our instant access</li>
           <li>Test with basic plans before upgrading</li>
         </ul>
       </div>
