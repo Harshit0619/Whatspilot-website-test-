@@ -29,6 +29,7 @@ const footerLinks = {
     { name: "Documentation", href: "/docs" },
     { name: "Blog", href: "/blog" },
     { name: "Help Center", href: "/contact" },
+    { name: "Warmup Guidelines", href: "/warmup-guidelines" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy-policy" },
