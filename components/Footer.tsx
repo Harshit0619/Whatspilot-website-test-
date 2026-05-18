@@ -28,6 +28,7 @@ const footerLinks = {
   resources: [
     { name: "Documentation", href: "/docs" },
     { name: "Blog", href: "/blog" },
+    { name: "Locations", href: "/locations" },
     { name: "Help Center", href: "/contact" },
     { name: "Warmup Guidelines", href: "/warmup-guidelines" },
   ],
