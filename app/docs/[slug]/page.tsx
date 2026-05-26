@@ -1,28 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight, ArrowLeft, Clock, BookOpen } from "lucide-react";
+import { docsSlugs } from "@/lib/docs";
 
 export async function generateStaticParams() {
-  const slugs = [
-    "setup-account",
-    "connect-whatsapp",
-    "multi-number-inbox",
-    "multi-agent-access",
-    "bulk-messaging",
-    "scheduled-messages",
-    "analytics",
-    "data-export",
-    "labels",
-    "quick-replies",
-    "create-tickets",
-    "create-tasks",
-    "ai-flagged-messages",
-    "ai-summaries",
-    "automation-rules",
-    "integrations",
-  ];
-
-  return slugs.map((slug) => ({ slug }));
+  return docsSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({

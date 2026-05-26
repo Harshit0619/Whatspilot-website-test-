@@ -155,12 +155,12 @@ export default function Navigation({ scrollY }: NavigationProps) {
               </Link>
             ))}
             <div className="pt-4 border-t border-gray-100 space-y-3">
-              <Link
-                href="/login"
+              <a
+                href="https://app.whatspilot.online"
                 className="block py-2 text-base font-medium text-gray-700 hover:text-whatsapp-green"
               >
                 Login
-              </Link>
+              </a>
               <a
                  href="https://app.whatspilot.online/auth/register"
                  target="_blank"
