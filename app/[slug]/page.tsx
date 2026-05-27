@@ -6,7 +6,7 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export default async function LocationPageRedirect({
+export default async function LocationRootRedirect({
   params,
 }: {
   params: Promise<{ slug: string }>;

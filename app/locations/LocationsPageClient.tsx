@@ -60,7 +60,7 @@ export default function LocationsPageClient({
             {initialLocations.map((loc) => (
               <Link
                 key={loc.slug}
-                href={`/locations/${toMarketingLocationSlug(loc.slug)}`}
+                href={`/services/${toMarketingLocationSlug(loc.slug)}`}
                 className="group flex items-center justify-center gap-2 px-3 py-3 h-12 rounded-xl bg-white border border-gray-100 shadow-card hover:shadow-card-hover hover:border-whatsapp-green/30 transition-all duration-300 hover:-translate-y-0.5"
               >
                 <MapPin className="w-4 h-4 text-gray-400 group-hover:text-whatsapp-green transition-colors flex-shrink-0 min-w-[16px]" />
@@ -87,7 +87,7 @@ export default function LocationsPageClient({
               {initialLocations.map((loc) => (
                 <Link
                   key={`schedule-${loc.slug}`}
-                  href={`/locations/${toSchedulingLocationSlug(loc.slug)}`}
+                  href={`/services/${toSchedulingLocationSlug(loc.slug)}`}
                   className="group flex items-center justify-center gap-2 px-3 py-3 h-12 rounded-xl bg-white border border-gray-100 shadow-card hover:shadow-card-hover hover:border-whatsapp-green/30 transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <MapPin className="w-4 h-4 text-gray-400 group-hover:text-whatsapp-green transition-colors flex-shrink-0 min-w-[16px]" />
@@ -115,7 +115,7 @@ export default function LocationsPageClient({
               {initialLocations.map((loc) => (
                 <Link
                   key={`group-${loc.slug}`}
-                  href={`/locations/${toGroupManagementLocationSlug(loc.slug)}`}
+                  href={`/services/${toGroupManagementLocationSlug(loc.slug)}`}
                   className="group flex items-center justify-center gap-2 px-3 py-3 h-12 rounded-xl bg-white border border-gray-100 shadow-card hover:shadow-card-hover hover:border-whatsapp-green/30 transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <MapPin className="w-4 h-4 text-gray-400 group-hover:text-whatsapp-green transition-colors flex-shrink-0 min-w-[16px]" />
@@ -143,7 +143,7 @@ export default function LocationsPageClient({
               {initialLocations.map((loc) => (
                 <Link
                   key={`chatbots-${loc.slug}`}
-                  href={`/locations/${toChatbotsLocationSlug(loc.slug)}`}
+                  href={`/services/${toChatbotsLocationSlug(loc.slug)}`}
                   className="group flex items-center justify-center gap-2 px-3 py-3 h-12 rounded-xl bg-white border border-gray-100 shadow-card hover:shadow-card-hover hover:border-whatsapp-green/30 transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <MapPin className="w-4 h-4 text-gray-400 group-hover:text-whatsapp-green transition-colors flex-shrink-0 min-w-[16px]" />
@@ -171,7 +171,7 @@ export default function LocationsPageClient({
               {initialLocations.map((loc) => (
                 <Link
                   key={`templates-${loc.slug}`}
-                  href={`/locations/${toTemplateLibraryLocationSlug(loc.slug)}`}
+                  href={`/services/${toTemplateLibraryLocationSlug(loc.slug)}`}
                   className="group flex items-center justify-center gap-2 px-3 py-3 h-12 rounded-xl bg-white border border-gray-100 shadow-card hover:shadow-card-hover hover:border-whatsapp-green/30 transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <MapPin className="w-4 h-4 text-gray-400 group-hover:text-whatsapp-green transition-colors flex-shrink-0 min-w-[16px]" />
@@ -199,7 +199,7 @@ export default function LocationsPageClient({
               {initialLocations.map((loc) => (
                 <Link
                   key={`analysis-${loc.slug}`}
-                  href={`/locations/${toAdvancedAnalysisLocationSlug(loc.slug)}`}
+                  href={`/services/${toAdvancedAnalysisLocationSlug(loc.slug)}`}
                   className="group flex items-center justify-center gap-2 px-3 py-3 h-12 rounded-xl bg-white border border-gray-100 shadow-card hover:shadow-card-hover hover:border-whatsapp-green/30 transition-all duration-300 hover:-translate-y-0.5"
                 >
                   <MapPin className="w-4 h-4 text-gray-400 group-hover:text-whatsapp-green transition-colors flex-shrink-0 min-w-[16px]" />

@@ -411,11 +411,11 @@ export default function LocationPageClient({
                   </Button>
                 </Link>
                 <a
-                  href="tel:+918130367983"
+                  href="tel:+918449488090"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-medium text-white border border-gray-600 hover:border-whatsapp-green hover:text-whatsapp-green transition-all duration-300"
                 >
                   <Phone className="w-5 h-5" />
-                  +91 81303 67983
+                  +91 8449488090
                 </a>
               </div>
             </div>

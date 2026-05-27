@@ -18,8 +18,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 81303 67983",
-    href: "tel:+918130367983",
+    value: "+91 8449488090",
+    href: "tel:+918449488090",
   },
   {
     icon: Mail,
@@ -355,7 +355,7 @@ export default function ContactPageClient() {
                       inquiries.
                     </p>
                     <a
-                      href="https://wa.me/918130367983"
+                      href="https://wa.me/918449488090"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 bg-white text-whatsapp-green rounded-lg font-medium text-sm hover:bg-gray-100 transition-colors"

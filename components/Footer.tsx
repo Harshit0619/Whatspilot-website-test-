@@ -278,11 +278,11 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-600">
                 <a
-                  href="tel:+918130367983"
+                  href="tel:+918449488090"
                   className="flex items-center gap-2 hover:text-whatsapp-green transition-colors"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0" />
-                  <span>+91 81303 67983</span>
+                  <span>+91 8449488090</span>
                 </a>
                 <a
                   href="mailto:support@whatspilot.online"
@@ -299,7 +299,7 @@ export default function Footer() {
               <p className="text-sm text-gray-500 whitespace-nowrap">
                 Help Desk:{" "}
                 <span className="text-whatsapp-green font-medium">
-                  +91 81303 67983
+                  +91 8449488090
                 </span>
               </p>
             </div>
