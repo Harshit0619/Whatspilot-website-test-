@@ -1,6 +1,5 @@
 import { featuresData, type Feature } from '@/app/features/feature-data';
 import { getAllPosts, type BlogPost } from '@/lib/blog';
-import { docsSlugs } from '@/lib/docs';
 import { getLocationSlugs } from '@/lib/locations';
 
 export const dynamic = 'force-static';
@@ -17,7 +16,6 @@ export async function GET() {
     { loc: `${baseUrl}/contact`, priority: 0.8, changefreq: 'weekly', lastmod: now },
     { loc: `${baseUrl}/careers`, priority: 0.8, changefreq: 'weekly', lastmod: now },
     { loc: `${baseUrl}/blog`, priority: 0.8, changefreq: 'weekly', lastmod: now },
-    { loc: `${baseUrl}/docs`, priority: 0.8, changefreq: 'weekly', lastmod: now },
     { loc: `${baseUrl}/locations`, priority: 0.8, changefreq: 'weekly', lastmod: now },
     { loc: `${baseUrl}/privacy-policy`, priority: 0.8, changefreq: 'weekly', lastmod: now },
     { loc: `${baseUrl}/terms-of-service`, priority: 0.8, changefreq: 'weekly', lastmod: now },
@@ -44,12 +42,6 @@ export async function GET() {
     changefreq: 'weekly',
   }));
 
-  const docsRoutes = docsSlugs.map((slug) => ({
-    loc: `${baseUrl}/docs/${slug}`,
-    lastmod: now,
-    priority: 0.6,
-    changefreq: 'monthly',
-  }));
 
   const locationRoutes = getLocationSlugs().map((slug) => ({
     loc: `${baseUrl}/locations/${slug}`,
@@ -63,7 +55,6 @@ export async function GET() {
     ...staticRoutes,
     ...featureRoutes,
     ...blogRoutes,
-    ...docsRoutes,
     ...locationRoutes,
   ];
 
