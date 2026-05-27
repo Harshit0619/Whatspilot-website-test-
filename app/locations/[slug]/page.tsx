@@ -1,33 +1,40 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import LocationPageClient from "./LocationPageClient";
-import { getLocationBySlug, getLocationSlugs } from "@/lib/locations";
-import { toPublicLocationSlug } from "@/lib/locations-slug";
+import { getLocationBySlug, getLocationPublicSlugs } from "@/lib/locations";
+import {
+  getLocationVariantFromSlug,
+  replaceLocationServiceLabel,
+} from "@/lib/locations-slug";
 
 export async function generateStaticParams() {
-  const slugs = getLocationSlugs();
+  const slugs = getLocationPublicSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const location = getLocationBySlug(slug);
+  const variant = getLocationVariantFromSlug(slug);
 
   if (!location) {
     return { title: "Location Not Found" };
   }
 
+  const title = replaceLocationServiceLabel(location.title, variant);
+  const description = replaceLocationServiceLabel(location.excerpt, variant);
+
   return {
-    title: `${location.title} | WhatsPilot`,
-    description: location.excerpt,
+    title: `${title} | WhatsPilot`,
+    description,
     keywords: ["whatsapp automation", location.slug, "whatsapp marketing", "india"],
     robots: { index: true, follow: true },
     alternates: {
-      canonical: `https://www.whatspilot.online/locations/${toPublicLocationSlug(location.slug)}`,
+      canonical: `https://www.whatspilot.online/locations/${slug}`,
     },
     openGraph: {
-      title: location.title,
-      description: location.excerpt,
+      title,
+      description,
       type: "website",
     },
   };
@@ -36,10 +43,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function LocationPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const location = getLocationBySlug(slug);
+  const variant = getLocationVariantFromSlug(slug);
 
   if (!location) {
     notFound();
   }
 
-  return <LocationPageClient location={location} />;
+  return <LocationPageClient location={location} variant={variant} />;
 }

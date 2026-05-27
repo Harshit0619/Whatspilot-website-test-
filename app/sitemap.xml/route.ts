@@ -1,6 +1,6 @@
 import { featuresData, type Feature } from '@/app/features/feature-data';
 import { getAllPosts, type BlogPost } from '@/lib/blog';
-import { getLocationSlugs } from '@/lib/locations';
+import { getLocationPublicSlugs } from '@/lib/locations';
 
 export const dynamic = 'force-static';
 
@@ -43,7 +43,7 @@ export async function GET() {
   }));
 
 
-  const locationRoutes = getLocationSlugs().map((slug) => ({
+  const locationRoutes = getLocationPublicSlugs().map((slug) => ({
     loc: `${baseUrl}/locations/${slug}`,
     lastmod: now,
     priority: 0.7,

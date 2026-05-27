@@ -25,6 +25,11 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import {
+  getServiceLabel,
+  replaceLocationServiceLabel,
+  type LocationVariant,
+} from "@/lib/locations-slug";
 
 interface LocationItem {
   slug: string;
@@ -54,6 +59,7 @@ interface LocationItem {
 
 interface LocationPageClientProps {
   location: LocationItem;
+  variant: LocationVariant;
 }
 
 const featureIcons = [Bot, Send, Shield, MessageCircle];
@@ -155,8 +161,17 @@ function HowWeWork() {
 
 export default function LocationPageClient({
   location,
+  variant,
 }: LocationPageClientProps) {
-  const locationName = location.title.replace("WhatsApp Marketing & Automations in ", "");
+  const serviceLabel = getServiceLabel(variant);
+  const locationTitle = replaceLocationServiceLabel(location.title, variant);
+  const locationExcerpt = replaceLocationServiceLabel(location.excerpt, variant);
+  const locationContent = replaceLocationServiceLabel(location.content, variant);
+  const locationName = locationTitle.replace(`${serviceLabel} in `, "");
+  const locationFaqs = location.faqs.map((faq) => ({
+    q: replaceLocationServiceLabel(faq.q, variant),
+    a: replaceLocationServiceLabel(faq.a, variant),
+  }));
 
   return (
     <article className="pt-28 pb-20 bg-white min-h-screen">
@@ -180,11 +195,11 @@ export default function LocationPageClient({
           <div className="max-w-3xl mx-auto text-center">
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight text-balance">
-              {location.title}
+              {locationTitle}
             </h1>
 
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              {location.excerpt}
+              {locationExcerpt}
             </p>
           </div>
 
@@ -239,7 +254,7 @@ export default function LocationPageClient({
                   prose-strong:text-gray-900"
                 >
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {location.content}
+                    {locationContent}
                   </ReactMarkdown>
                 </div>
               </section>
@@ -268,7 +283,7 @@ export default function LocationPageClient({
               {/* Why Choose */}
               <section className="mb-16">
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-                  Why Choose WhatsPilot for WhatsApp Marketing & Automations in {locationName}?
+                  Why Choose WhatsPilot for {serviceLabel} in {locationName}?
                 </h2>
                 <div className="space-y-6">
                   {location.whyChoose.map((item, index) => (
@@ -315,7 +330,7 @@ export default function LocationPageClient({
                   Frequently Asked Questions in {locationName}
                 </h2>
                 <Accordion type="single" collapsible className="w-full">
-                  {location.faqs.map((faq, index) => (
+                  {locationFaqs.map((faq, index) => (
                     <AccordionItem key={index} value={`faq-${index}`}>
                       <AccordionTrigger className="text-left font-medium text-gray-900 hover:text-whatsapp-green">
                         {faq.q}
@@ -350,7 +365,7 @@ export default function LocationPageClient({
                 Ready to Grow in {locationName}?
               </h2>
               <p className="text-gray-300 text-lg mb-8">
-                Let&apos;s discuss how WhatsApp Marketing &amp; Automations can help your business in {locationName}.
+                Let&apos;s discuss how {serviceLabel} can help your business in {locationName}.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact">

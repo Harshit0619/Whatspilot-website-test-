@@ -2,7 +2,10 @@
 
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
-import { toPublicLocationSlug } from '@/lib/locations-slug';
+import {
+  toMarketingLocationSlug,
+  toSchedulingLocationSlug,
+} from '@/lib/locations-slug';
 
 interface LocationItem {
   slug: string;
@@ -40,7 +43,7 @@ export default function LocationsPageClient({
             {initialLocations.map((loc) => (
               <Link
                 key={loc.slug}
-                href={`/locations/${toPublicLocationSlug(loc.slug)}`}
+                href={`/locations/${toMarketingLocationSlug(loc.slug)}`}
                 className="group flex items-center justify-center gap-2 px-3 py-3 h-12 rounded-xl bg-white border border-gray-100 shadow-card hover:shadow-card-hover hover:border-whatsapp-green/30 transition-all duration-300 hover:-translate-y-0.5"
               >
                 <MapPin className="w-4 h-4 text-gray-400 group-hover:text-whatsapp-green transition-colors flex-shrink-0 min-w-[16px]" />
@@ -49,6 +52,34 @@ export default function LocationsPageClient({
                 </span>
               </Link>
             ))}
+          </div>
+
+          {/* Message Scheduling Section */}
+          <div className="mt-14">
+            <div className="text-center max-w-2xl mx-auto mb-8">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
+                WhatsApp Message Scheduling{' '}
+                <span className="gradient-text">Locations</span>
+              </h2>
+              <p className="text-base text-gray-600">
+                Available in {initialLocations.length} major cities.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+              {initialLocations.map((loc) => (
+                <Link
+                  key={`schedule-${loc.slug}`}
+                  href={`/locations/${toSchedulingLocationSlug(loc.slug)}`}
+                  className="group flex items-center justify-center gap-2 px-3 py-3 h-12 rounded-xl bg-white border border-gray-100 shadow-card hover:shadow-card-hover hover:border-whatsapp-green/30 transition-all duration-300 hover:-translate-y-0.5"
+                >
+                  <MapPin className="w-4 h-4 text-gray-400 group-hover:text-whatsapp-green transition-colors flex-shrink-0 min-w-[16px]" />
+                  <span className="text-sm font-medium text-gray-700 group-hover:text-whatsapp-green transition-colors truncate max-w-full">
+                    {loc.title.replace('WhatsApp Marketing & Automations in ', '')}
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

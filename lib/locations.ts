@@ -1,7 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { fromPublicLocationSlug, toPublicLocationSlug } from './locations-slug';
+import {
+  fromPublicLocationSlug,
+  toMarketingLocationSlug,
+  toSchedulingLocationSlug,
+} from './locations-slug';
 
 const locationsDirectory = path.join(process.cwd(), 'content/locations');
 
@@ -35,8 +39,26 @@ export function getLocationSlugs(): string[] {
   const fileNames = fs.readdirSync(locationsDirectory);
   return fileNames
     .filter(name => name.endsWith('.md'))
-    .map(name => name.replace(/\.md$/, ''))
-    .map(toPublicLocationSlug);
+    .map(name => name.replace(/\.md$/, ''));
+}
+
+export function getLocationPublicSlugs(
+  variant: 'marketing' | 'scheduling' | 'both' = 'both',
+): string[] {
+  const rawSlugs = getLocationSlugs();
+
+  if (variant === 'marketing') {
+    return rawSlugs.map(toMarketingLocationSlug);
+  }
+
+  if (variant === 'scheduling') {
+    return rawSlugs.map(toSchedulingLocationSlug);
+  }
+
+  return rawSlugs.flatMap((slug) => [
+    toMarketingLocationSlug(slug),
+    toSchedulingLocationSlug(slug),
+  ]);
 }
 
 export function getLocationBySlug(slug: string): LocationItem | null {
