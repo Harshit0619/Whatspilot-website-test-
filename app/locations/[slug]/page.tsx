@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import LocationPageClient from "./LocationPageClient";
 import { getLocationBySlug, getLocationSlugs } from "@/lib/locations";
+import { toPublicLocationSlug } from "@/lib/locations-slug";
 
 export async function generateStaticParams() {
   const slugs = getLocationSlugs();
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     keywords: ["whatsapp automation", location.slug, "whatsapp marketing", "india"],
     robots: { index: true, follow: true },
     alternates: {
-      canonical: `https://www.whatspilot.online/locations/${location.slug}`,
+      canonical: `https://www.whatspilot.online/locations/${toPublicLocationSlug(location.slug)}`,
     },
     openGraph: {
       title: location.title,

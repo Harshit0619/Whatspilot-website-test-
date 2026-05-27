@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { fromPublicLocationSlug, toPublicLocationSlug } from './locations-slug';
 
 const locationsDirectory = path.join(process.cwd(), 'content/locations');
 
@@ -34,11 +35,13 @@ export function getLocationSlugs(): string[] {
   const fileNames = fs.readdirSync(locationsDirectory);
   return fileNames
     .filter(name => name.endsWith('.md'))
-    .map(name => name.replace(/\.md$/, ''));
+    .map(name => name.replace(/\.md$/, ''))
+    .map(toPublicLocationSlug);
 }
 
 export function getLocationBySlug(slug: string): LocationItem | null {
-  const fullPath = path.join(locationsDirectory, `${slug}.md`);
+  const rawSlug = fromPublicLocationSlug(slug);
+  const fullPath = path.join(locationsDirectory, `${rawSlug}.md`);
 
   if (!fs.existsSync(fullPath)) {
     return null;

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
+import { toPublicLocationSlug } from '@/lib/locations-slug';
 
 interface LocationItem {
   slug: string;
@@ -39,7 +40,7 @@ export default function LocationsPageClient({
             {initialLocations.map((loc) => (
               <Link
                 key={loc.slug}
-                href={`/locations/${loc.slug}`}
+                href={`/locations/${toPublicLocationSlug(loc.slug)}`}
                 className="group flex items-center justify-center gap-2 px-3 py-3 h-12 rounded-xl bg-white border border-gray-100 shadow-card hover:shadow-card-hover hover:border-whatsapp-green/30 transition-all duration-300 hover:-translate-y-0.5"
               >
                 <MapPin className="w-4 h-4 text-gray-400 group-hover:text-whatsapp-green transition-colors flex-shrink-0 min-w-[16px]" />
