@@ -30,6 +30,15 @@ import {
   getKeywordsForVariant,
   replaceLocationServiceLabel,
   type LocationVariant,
+  toApiProviderLocationSlug,
+  toBusinessApiLocationSlug,
+  toBulkSenderLocationSlug,
+  toCampaignSoftwareLocationSlug,
+  toChatbotSoftwareLocationSlug,
+  toGroupManagementLocationSlug,
+  toLeadGenerationLocationSlug,
+  toMarketingLocationSlug,
+  toSchedulingLocationSlug,
 } from "@/lib/locations-slug";
 
 interface LocationItem {
@@ -66,39 +75,66 @@ interface LocationPageClientProps {
 const featureIcons = [Bot, Send, Shield, MessageCircle];
 const whyChooseIcons = [MessageCircle, Zap, MessageCircle, Users, Target];
 
-function OtherServices() {
+const extraFeatures = [
+  "AI Agents",
+  "Smart audience segmentation",
+  "Multi-language support",
+  "Real-time analytics",
+  "Lead capture workflows",
+  "Campaign performance tracking",
+  "Contact list hygiene",
+  "Personalized message variables",
+];
+
+function OtherServices({
+  locationSlug,
+  locationName,
+  currentVariant,
+}: {
+  locationSlug: string;
+  locationName: string;
+  currentVariant: LocationVariant;
+}) {
   const services = [
-    { name: "Digital Marketing", href: "/services/digital-marketing" },
-    { name: "Application Development", href: "/services/application-development" },
-    { name: "Brand Development", href: "/services/brand-development" },
-    { name: "Google Ads & Meta", href: "/services/google-ads-meta" },
-    { name: "E-commerce Solutions", href: "/services/ecommerce-solutions" },
-  ];
+    { variant: "marketing", slug: toMarketingLocationSlug(locationSlug) },
+    { variant: "scheduling", slug: toSchedulingLocationSlug(locationSlug) },
+    { variant: "group-management", slug: toGroupManagementLocationSlug(locationSlug) },
+    { variant: "chatbot-software", slug: toChatbotSoftwareLocationSlug(locationSlug) },
+    { variant: "api-provider", slug: toApiProviderLocationSlug(locationSlug) },
+    { variant: "bulk-sender", slug: toBulkSenderLocationSlug(locationSlug) },
+    { variant: "lead-generation", slug: toLeadGenerationLocationSlug(locationSlug) },
+    { variant: "business-api", slug: toBusinessApiLocationSlug(locationSlug) },
+    { variant: "campaign-software", slug: toCampaignSoftwareLocationSlug(locationSlug) },
+  ] satisfies Array<{ variant: LocationVariant; slug: string }>;
+
+  const filteredServices = services.filter(
+    (service) => service.variant !== currentVariant,
+  );
 
   return (
     <div className="space-y-6">
       <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
         <h3 className="font-bold text-gray-900 mb-4">Other Services</h3>
         <ul className="space-y-3">
-          {services.map((service) => (
-            <li key={service.name}>
+          {filteredServices.map((service) => (
+            <li key={service.variant}>
               <Link
-                href={service.href}
+                href={`/services/${service.slug}`}
                 className="flex items-center gap-2 text-sm text-gray-600 hover:text-whatsapp-green transition-colors group"
               >
                 <ChevronDown className="w-3 h-3 -rotate-90 text-gray-400 group-hover:text-whatsapp-green transition-colors" />
-                {service.name}
+                {getServiceLabel(service.variant)} in {locationName}
               </Link>
             </li>
           ))}
         </ul>
       </div>
-      <Link href="/contact">
-        <Button className="btn-primary w-full">
-          Get a Free Quote
+      <a href="https://scheduler.zoom.us/aiclex-technologies">
+        <Button className="btn-primary w-full cursor-pointer">
+          Get a Free Demo
           <ArrowRight className="w-4 h-4 ml-2" />
         </Button>
-      </Link>
+      </a>
     </div>
   );
 }
@@ -175,6 +211,28 @@ function getLocationStats(seedText: string) {
   };
 }
 
+function getLocationFeatureList(seedText: string, features: string[]) {
+  const replaced = features.map((feature) =>
+    feature === "Green Tick Verification Support" ? "AI Agents" : feature,
+  );
+  const base = new Set(replaced);
+  const seed = seedText
+    .split("")
+    .reduce((acc, char) => (acc * 37 + char.charCodeAt(0)) % 100000, 11);
+  const additions = extraFeatures.filter((feature) => !base.has(feature));
+  const added = additions
+    .slice(seed % additions.length)
+    .concat(additions)
+    .slice(0, 2);
+  const merged = [...replaced, ...added];
+  const sorted = merged
+    .map((feature, index) => ({ feature, index }))
+    .sort((a, b) => (a.index + seed) % 7 - (b.index + seed) % 7)
+    .map((item) => item.feature);
+
+  return sorted;
+}
+
 export default function LocationPageClient({
   location,
   variant,
@@ -190,6 +248,10 @@ export default function LocationPageClient({
   }));
   const keywordList = getKeywordsForVariant(variant);
   const stats = getLocationStats(`${location.slug}-${variant}`);
+  const featureList = getLocationFeatureList(
+    `${location.slug}-${variant}`,
+    location.features,
+  );
 
   return (
     <article className="pt-28 pb-20 bg-white min-h-screen">
@@ -222,12 +284,12 @@ export default function LocationPageClient({
           </div>
 
           <div className="flex justify-center">
-            <Link href="/contact">
-              <Button className="btn-primary">
-                Get Started
+            <a href="https://scheduler.zoom.us/aiclex-technologies">
+              <Button className="btn-primary cursor-pointer">
+                Get a Free Demo
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -299,7 +361,7 @@ export default function LocationPageClient({
               <section className="mb-16">
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Key Features</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  {location.features.map((feature, index) => {
+                  {featureList.map((feature, index) => {
                     const Icon = featureIcons[index % featureIcons.length];
                     return (
                       <div
@@ -383,7 +445,11 @@ export default function LocationPageClient({
             {/* Sidebar */}
             <aside className="hidden lg:block w-72 flex-shrink-0">
               <div className="sticky top-32 space-y-6">
-                <OtherServices />
+                <OtherServices
+                  locationSlug={location.slug}
+                  locationName={locationName}
+                  currentVariant={variant}
+                />
               </div>
             </aside>
           </div>
@@ -404,12 +470,12 @@ export default function LocationPageClient({
                 Let&apos;s discuss how {serviceLabel} can help your business in {locationName}.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact">
-                  <Button className="btn-primary !px-8 !py-3.5 text-base">
-                    Get a Free Quote
+                <a href="https://scheduler.zoom.us/aiclex-technologies">
+                  <Button className="btn-primary !px-8 !py-3.5 text-base cursor-pointer">
+                    Get a Free Demo
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
-                </Link>
+                </a>
                 <a
                   href="tel:+918449488090"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-medium text-white border border-gray-600 hover:border-whatsapp-green hover:text-whatsapp-green transition-all duration-300"

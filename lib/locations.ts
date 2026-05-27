@@ -6,7 +6,12 @@ import {
   toMarketingLocationSlug,
   toSchedulingLocationSlug,
   toGroupManagementLocationSlug,
-  toAdvancedAnalysisLocationSlug,
+  toChatbotSoftwareLocationSlug,
+  toApiProviderLocationSlug,
+  toBulkSenderLocationSlug,
+  toLeadGenerationLocationSlug,
+  toBusinessApiLocationSlug,
+  toCampaignSoftwareLocationSlug,
 } from './locations-slug';
 
 const locationsDirectory = path.join(process.cwd(), 'content/locations');
@@ -49,7 +54,12 @@ export function getLocationPublicSlugs(
     | 'marketing'
     | 'scheduling'
     | 'group-management'
-    | 'advanced-analysis'
+    | 'chatbot-software'
+    | 'api-provider'
+    | 'bulk-sender'
+    | 'lead-generation'
+    | 'business-api'
+    | 'campaign-software'
     | 'all'
     | 'both' = 'both',
 ): string[] {
@@ -67,8 +77,28 @@ export function getLocationPublicSlugs(
     return rawSlugs.map(toGroupManagementLocationSlug);
   }
 
-  if (variant === 'advanced-analysis') {
-    return rawSlugs.map(toAdvancedAnalysisLocationSlug);
+  if (variant === 'chatbot-software') {
+    return rawSlugs.map(toChatbotSoftwareLocationSlug);
+  }
+
+  if (variant === 'api-provider') {
+    return rawSlugs.map(toApiProviderLocationSlug);
+  }
+
+  if (variant === 'bulk-sender') {
+    return rawSlugs.map(toBulkSenderLocationSlug);
+  }
+
+  if (variant === 'lead-generation') {
+    return rawSlugs.map(toLeadGenerationLocationSlug);
+  }
+
+  if (variant === 'business-api') {
+    return rawSlugs.map(toBusinessApiLocationSlug);
+  }
+
+  if (variant === 'campaign-software') {
+    return rawSlugs.map(toCampaignSoftwareLocationSlug);
   }
 
   if (variant === 'all') {
@@ -76,7 +106,12 @@ export function getLocationPublicSlugs(
       toMarketingLocationSlug(slug),
       toSchedulingLocationSlug(slug),
       toGroupManagementLocationSlug(slug),
-      toAdvancedAnalysisLocationSlug(slug),
+      toChatbotSoftwareLocationSlug(slug),
+      toApiProviderLocationSlug(slug),
+      toBulkSenderLocationSlug(slug),
+      toLeadGenerationLocationSlug(slug),
+      toBusinessApiLocationSlug(slug),
+      toCampaignSoftwareLocationSlug(slug),
     ]);
   }
 

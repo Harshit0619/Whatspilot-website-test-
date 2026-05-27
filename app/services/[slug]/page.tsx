@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import LocationPageClient from "@/app/locations/[slug]/LocationPageClient";
-import { getLocationBySlug, getLocationPublicSlugs } from "@/lib/locations";
 import {
+  getLocationBySlug,
+  getLocationPublicSlugs,
+  getLocationSlugs,
+} from "@/lib/locations";
+import {
+  fromLegacyAdvancedAnalysisSlug,
   getLocationVariantFromSlug,
   getKeywordsForVariant,
+  isLegacyAdvancedAnalysisSlug,
   replaceLocationServiceLabel,
+  toCampaignSoftwareLocationSlug,
+  toLegacyAdvancedAnalysisSlug,
 } from "@/lib/locations-slug";
 
 export async function generateStaticParams() {
   const slugs = getLocationPublicSlugs("all");
-  return slugs.map((slug) => ({ slug }));
+  const legacySlugs = getLocationSlugs().map(toLegacyAdvancedAnalysisSlug);
+  return [...slugs, ...legacySlugs].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -19,6 +28,10 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  if (isLegacyAdvancedAnalysisSlug(slug)) {
+    const rawSlug = fromLegacyAdvancedAnalysisSlug(slug);
+    redirect(`/services/${toCampaignSoftwareLocationSlug(rawSlug)}`);
+  }
   const location = getLocationBySlug(slug);
   const variant = getLocationVariantFromSlug(slug);
 
