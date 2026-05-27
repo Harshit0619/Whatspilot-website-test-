@@ -1,16 +1,12 @@
 export const MARKETING_SLUG_PREFIX = "whatsapp-marketing-automations-in-";
 export const SCHEDULING_SLUG_PREFIX = "whatsapp-message-scheduling-in-";
 export const GROUP_MANAGEMENT_SLUG_PREFIX = "whatsapp-group-management-tool-in-";
-export const CHATBOTS_SLUG_PREFIX = "ai-powered-chatbots-in-";
-export const TEMPLATE_LIBRARY_SLUG_PREFIX = "template-library-in-";
 export const ADVANCED_ANALYSIS_SLUG_PREFIX = "advanced-analysis-in-";
 
 export type LocationVariant =
   | "marketing"
   | "scheduling"
   | "group-management"
-  | "chatbots"
-  | "template-library"
   | "advanced-analysis";
 
 export function toMarketingLocationSlug(slug: string): string {
@@ -37,22 +33,6 @@ export function toGroupManagementLocationSlug(slug: string): string {
   return `${GROUP_MANAGEMENT_SLUG_PREFIX}${slug}`;
 }
 
-export function toChatbotsLocationSlug(slug: string): string {
-  if (slug.startsWith(CHATBOTS_SLUG_PREFIX)) {
-    return slug;
-  }
-
-  return `${CHATBOTS_SLUG_PREFIX}${slug}`;
-}
-
-export function toTemplateLibraryLocationSlug(slug: string): string {
-  if (slug.startsWith(TEMPLATE_LIBRARY_SLUG_PREFIX)) {
-    return slug;
-  }
-
-  return `${TEMPLATE_LIBRARY_SLUG_PREFIX}${slug}`;
-}
-
 export function toAdvancedAnalysisLocationSlug(slug: string): string {
   if (slug.startsWith(ADVANCED_ANALYSIS_SLUG_PREFIX)) {
     return slug;
@@ -74,14 +54,6 @@ export function fromPublicLocationSlug(slug: string): string {
     return slug.slice(GROUP_MANAGEMENT_SLUG_PREFIX.length);
   }
 
-  if (slug.startsWith(CHATBOTS_SLUG_PREFIX)) {
-    return slug.slice(CHATBOTS_SLUG_PREFIX.length);
-  }
-
-  if (slug.startsWith(TEMPLATE_LIBRARY_SLUG_PREFIX)) {
-    return slug.slice(TEMPLATE_LIBRARY_SLUG_PREFIX.length);
-  }
-
   if (slug.startsWith(ADVANCED_ANALYSIS_SLUG_PREFIX)) {
     return slug.slice(ADVANCED_ANALYSIS_SLUG_PREFIX.length);
   }
@@ -98,14 +70,6 @@ export function getLocationVariantFromSlug(slug: string): LocationVariant {
     return "group-management";
   }
 
-  if (slug.startsWith(CHATBOTS_SLUG_PREFIX)) {
-    return "chatbots";
-  }
-
-  if (slug.startsWith(TEMPLATE_LIBRARY_SLUG_PREFIX)) {
-    return "template-library";
-  }
-
   if (slug.startsWith(ADVANCED_ANALYSIS_SLUG_PREFIX)) {
     return "advanced-analysis";
   }
@@ -119,10 +83,6 @@ export function getServiceLabel(variant: LocationVariant): string {
       return "WhatsApp Message Scheduling";
     case "group-management":
       return "WhatsApp Group Management Tool";
-    case "chatbots":
-      return "AI Powered Chatbots";
-    case "template-library":
-      return "Template Library";
     case "advanced-analysis":
       return "Advanced Analysis";
     default:
@@ -155,20 +115,6 @@ export function getKeywordsForVariant(variant: LocationVariant): string[] {
         "team task management",
         "team communication",
         "whatsapp group management tool",
-      ];
-    case "chatbots":
-      return [
-        "ai powered chatbots",
-        "ai driven chatbots",
-        "ai powered bots",
-        "automated chatbot",
-      ];
-    case "template-library":
-      return [
-        "whatsapp marketing template",
-        "Marketing templates",
-        "whatsapp template",
-        "whatsapp campaign template",
       ];
     case "advanced-analysis":
       return [

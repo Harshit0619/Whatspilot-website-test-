@@ -6,8 +6,6 @@ import {
   toMarketingLocationSlug,
   toSchedulingLocationSlug,
   toGroupManagementLocationSlug,
-  toChatbotsLocationSlug,
-  toTemplateLibraryLocationSlug,
   toAdvancedAnalysisLocationSlug,
 } from './locations-slug';
 
@@ -51,8 +49,6 @@ export function getLocationPublicSlugs(
     | 'marketing'
     | 'scheduling'
     | 'group-management'
-    | 'chatbots'
-    | 'template-library'
     | 'advanced-analysis'
     | 'all'
     | 'both' = 'both',
@@ -71,14 +67,6 @@ export function getLocationPublicSlugs(
     return rawSlugs.map(toGroupManagementLocationSlug);
   }
 
-  if (variant === 'chatbots') {
-    return rawSlugs.map(toChatbotsLocationSlug);
-  }
-
-  if (variant === 'template-library') {
-    return rawSlugs.map(toTemplateLibraryLocationSlug);
-  }
-
   if (variant === 'advanced-analysis') {
     return rawSlugs.map(toAdvancedAnalysisLocationSlug);
   }
@@ -88,8 +76,6 @@ export function getLocationPublicSlugs(
       toMarketingLocationSlug(slug),
       toSchedulingLocationSlug(slug),
       toGroupManagementLocationSlug(slug),
-      toChatbotsLocationSlug(slug),
-      toTemplateLibraryLocationSlug(slug),
       toAdvancedAnalysisLocationSlug(slug),
     ]);
   }
