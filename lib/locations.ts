@@ -5,6 +5,10 @@ import {
   fromPublicLocationSlug,
   toMarketingLocationSlug,
   toSchedulingLocationSlug,
+  toGroupManagementLocationSlug,
+  toChatbotsLocationSlug,
+  toTemplateLibraryLocationSlug,
+  toAdvancedAnalysisLocationSlug,
 } from './locations-slug';
 
 const locationsDirectory = path.join(process.cwd(), 'content/locations');
@@ -43,7 +47,15 @@ export function getLocationSlugs(): string[] {
 }
 
 export function getLocationPublicSlugs(
-  variant: 'marketing' | 'scheduling' | 'both' = 'both',
+  variant:
+    | 'marketing'
+    | 'scheduling'
+    | 'group-management'
+    | 'chatbots'
+    | 'template-library'
+    | 'advanced-analysis'
+    | 'all'
+    | 'both' = 'both',
 ): string[] {
   const rawSlugs = getLocationSlugs();
 
@@ -53,6 +65,33 @@ export function getLocationPublicSlugs(
 
   if (variant === 'scheduling') {
     return rawSlugs.map(toSchedulingLocationSlug);
+  }
+
+  if (variant === 'group-management') {
+    return rawSlugs.map(toGroupManagementLocationSlug);
+  }
+
+  if (variant === 'chatbots') {
+    return rawSlugs.map(toChatbotsLocationSlug);
+  }
+
+  if (variant === 'template-library') {
+    return rawSlugs.map(toTemplateLibraryLocationSlug);
+  }
+
+  if (variant === 'advanced-analysis') {
+    return rawSlugs.map(toAdvancedAnalysisLocationSlug);
+  }
+
+  if (variant === 'all') {
+    return rawSlugs.flatMap((slug) => [
+      toMarketingLocationSlug(slug),
+      toSchedulingLocationSlug(slug),
+      toGroupManagementLocationSlug(slug),
+      toChatbotsLocationSlug(slug),
+      toTemplateLibraryLocationSlug(slug),
+      toAdvancedAnalysisLocationSlug(slug),
+    ]);
   }
 
   return rawSlugs.flatMap((slug) => [

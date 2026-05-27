@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/accordion";
 import {
   getServiceLabel,
+  getKeywordsForVariant,
   replaceLocationServiceLabel,
   type LocationVariant,
 } from "@/lib/locations-slug";
@@ -159,6 +160,21 @@ function HowWeWork() {
   );
 }
 
+function getLocationStats(seedText: string) {
+  const seed = seedText
+    .split("")
+    .reduce((acc, char) => (acc * 31 + char.charCodeAt(0)) % 100000, 7);
+  const projects = 10 + (seed % 41);
+  const clients = 10 + ((seed * 3) % 31);
+  const successRate = 60 + ((seed * 7) % 41);
+
+  return {
+    projects: `${projects}+`,
+    clients: `${clients}+`,
+    successRate: `${successRate}%`,
+  };
+}
+
 export default function LocationPageClient({
   location,
   variant,
@@ -172,6 +188,8 @@ export default function LocationPageClient({
     q: replaceLocationServiceLabel(faq.q, variant),
     a: replaceLocationServiceLabel(faq.a, variant),
   }));
+  const keywordList = getKeywordsForVariant(variant);
+  const stats = getLocationStats(`${location.slug}-${variant}`);
 
   return (
     <article className="pt-28 pb-20 bg-white min-h-screen">
@@ -221,17 +239,17 @@ export default function LocationPageClient({
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-whatsapp-green/5 to-white border border-whatsapp-green/20">
                 <BarChart3 className="w-6 h-6 text-whatsapp-green mx-auto mb-2" />
-                <p className="text-3xl font-bold text-gray-900">{location.stats.projects}</p>
+                <p className="text-3xl font-bold text-gray-900">{stats.projects}</p>
                 <p className="text-sm text-gray-600">Projects in {locationName}</p>
               </div>
               <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-whatsapp-green/5 to-white border border-whatsapp-green/20">
                 <Users className="w-6 h-6 text-whatsapp-green mx-auto mb-2" />
-                <p className="text-3xl font-bold text-gray-900">{location.stats.clients}</p>
+                <p className="text-3xl font-bold text-gray-900">{stats.clients}</p>
                 <p className="text-sm text-gray-600">Happy Clients</p>
               </div>
               <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-whatsapp-green/5 to-white border border-whatsapp-green/20">
                 <Target className="w-6 h-6 text-whatsapp-green mx-auto mb-2" />
-                <p className="text-3xl font-bold text-gray-900">{location.stats.successRate}</p>
+                <p className="text-3xl font-bold text-gray-900">{stats.successRate}</p>
                 <p className="text-sm text-gray-600">Success Rate</p>
               </div>
             </div>
@@ -258,6 +276,24 @@ export default function LocationPageClient({
                   </ReactMarkdown>
                 </div>
               </section>
+
+              {keywordList.length > 0 && (
+                <section className="mb-16">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                    {serviceLabel} Keywords
+                  </h2>
+                  <div className="flex flex-wrap gap-2">
+                    {keywordList.map((keyword) => (
+                      <span
+                        key={keyword}
+                        className="px-3 py-1.5 rounded-full bg-whatsapp-green/10 text-whatsapp-green text-sm font-medium"
+                      >
+                        {keyword}
+                      </span>
+                    ))}
+                  </div>
+                </section>
+              )}
 
               {/* Key Features */}
               <section className="mb-16">

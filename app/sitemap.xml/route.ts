@@ -43,7 +43,7 @@ export async function GET() {
   }));
 
 
-  const locationRoutes = getLocationPublicSlugs().map((slug) => ({
+  const locationRoutes = getLocationPublicSlugs('all').map((slug) => ({
     loc: `${baseUrl}/locations/${slug}`,
     lastmod: now,
     priority: 0.7,

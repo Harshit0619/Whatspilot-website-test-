@@ -4,11 +4,12 @@ import LocationPageClient from "./LocationPageClient";
 import { getLocationBySlug, getLocationPublicSlugs } from "@/lib/locations";
 import {
   getLocationVariantFromSlug,
+  getKeywordsForVariant,
   replaceLocationServiceLabel,
 } from "@/lib/locations-slug";
 
 export async function generateStaticParams() {
-  const slugs = getLocationPublicSlugs();
+  const slugs = getLocationPublicSlugs('all');
   return slugs.map((slug) => ({ slug }));
 }
 
@@ -23,11 +24,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const title = replaceLocationServiceLabel(location.title, variant);
   const description = replaceLocationServiceLabel(location.excerpt, variant);
+  const variantKeywords = getKeywordsForVariant(variant);
 
   return {
     title: `${title} | WhatsPilot`,
     description,
-    keywords: ["whatsapp automation", location.slug, "whatsapp marketing", "india"],
+    keywords: [
+      "whatsapp automation",
+      location.slug,
+      "whatsapp marketing",
+      "india",
+      ...variantKeywords,
+    ],
     robots: { index: true, follow: true },
     alternates: {
       canonical: `https://www.whatspilot.online/locations/${slug}`,
